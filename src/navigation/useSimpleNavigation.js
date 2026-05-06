@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { routes } from '../routes';
 
 export default function useSimpleNavigation() {
-  const [stack, setStack] = useState([routes.home]);
+  const [stack, setStack] = useState(routes.login);
   return {
     current: stack[stack.length - 1],
     go: (screen) => setStack(prev => [...prev, screen]),

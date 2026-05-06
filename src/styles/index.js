@@ -79,166 +79,183 @@ export const styles = StyleSheet.create({
   },
 
   // HEADER / LAYOUT MEDICO
-  medicoHeader: {
-    height: 132,
-    backgroundColor: colors.primary,
-    paddingTop: 22,
-    paddingHorizontal: 7,
-  },
-  whiteLogo: {
-    width: 52,
-    height: 52,
-    resizeMode: 'contain',
-    alignSelf: 'center',
-    marginTop: 0,
-  },
-  screenTitle: {
-    color: colors.white,
-    fontSize: 20,
-    fontWeight: '800',
-    marginTop: 14,
-  },
-  searchRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 6,
-    marginTop: 7,
-  },
-  searchBox: {
-    flex: 1,
-    height: 22,
-    backgroundColor: colors.white,
-    borderRadius: 5,
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 4,
-  },
-  searchInput: {
-    flex: 1,
-    paddingVertical: 0,
-    fontSize: 10,
-    height: '100%',
-    color: colors.text,
-  },
-  filterBtn: {
-    width: 18,
-    height: 22,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  contentFlat: {
-    flex: 1,
-    paddingHorizontal: 4,
-    paddingTop: 9,
-    paddingBottom: 70,
-    backgroundColor: colors.bg,
-  },
+ medicoHeader: {
+  height: 132,
+  backgroundColor: colors.primary,
+  paddingTop: 22,
+  paddingHorizontal: 7,
+  marginBottom: 8,
+},
 
-  tabsWrap: {
-    height: 29,
-    backgroundColor: '#DFDFDF',
-    borderRadius: 4,
-    flexDirection: 'row',
-    padding: 1,
-    marginBottom: 7,
-    shadowColor: '#000',
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
-    shadowOffset: { width: 0, height: 2 },
-    elevation: 3,
-  },
-  tabMed: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'relative',
-  },
-  tabLabel: {
-    color: '#202020',
-    fontSize: 9,
-    fontWeight: '600',
-  },
-  tabUnderline: {
-    position: 'absolute',
-    bottom: 0,
-    width: '75%',
-    height: 2,
-    backgroundColor: colors.primary,
-    borderRadius: 2,
-  },
+whiteLogo: {
+  width: 52,
+  height: 52,
+  resizeMode: 'contain',
+  alignSelf: 'center',
+},
 
-  laudoCard: {
-    minHeight: 58,
-    borderRadius: 6,
-    backgroundColor: colors.card,
-    borderWidth: 1,
-    borderColor: '#E0E0E0',
-    marginBottom: 5,
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 5,
-    shadowColor: '#000',
-    shadowOpacity: 0.05,
-    shadowRadius: 2,
-    shadowOffset: { width: 0, height: 1 },
-    elevation: 1,
-  },
-  statusIconBox: {
-    width: 25,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginRight: 4,
-  },
-  patientInfo: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  patientName: {
-    fontSize: 8,
-    color: colors.text,
-    fontWeight: '800',
-  },
-  patientLine: {
-    fontSize: 7,
-    color: colors.text,
-    marginTop: 1,
-  },
-  patientMuted: {
-    fontSize: 7,
-    color: '#565656',
-    marginTop: 1,
-  },
-  rightAction: {
-    width: 42,
-    alignItems: 'center',
-  },
-  rightActionText: {
-    fontSize: 7,
-    color: '#2A2A2A',
-    marginTop: 0,
-  },
+screenTitle: {
+  color: colors.white,
+  fontSize: 20,
+  fontWeight: '800',
 
-  bottomNav: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    height: 45,
-    backgroundColor: colors.white,
-    flexDirection: 'row',
-    borderTopWidth: 1,
-    borderTopColor: '#E6E6E6',
-  },
-  bottomItem: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 2,
-  },
-  bottomText: {
-    fontSize: 7,
-    color: '#1D1D1D',
-  },
+},
+
+searchRow: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  gap: 6,
+  marginTop: 7,
+},
+
+searchBox: {
+  flex: 1,
+  height: 22,
+  backgroundColor: colors.white,
+  borderRadius: 5,
+  flexDirection: 'row',
+  alignItems: 'center',
+  paddingHorizontal: 4,
+},
+
+searchInput: {
+  flex: 1,
+  paddingVertical: 0,
+  fontSize: 10,
+  height: '100%',
+  color: colors.text,
+},
+
+filterBtn: {
+  width: 18,
+  height: 22,
+  alignItems: 'center',
+  justifyContent: 'center',
+},
+
+contentFlat: {
+  flex: 1,
+  paddingHorizontal: 4,
+  paddingBottom: 70,
+  backgroundColor: colors.bg,
+},
+
+tabsWrap: {
+  height: 29,
+  backgroundColor: '#DFDFDF',
+  borderRadius: 4,
+  flexDirection: 'row',
+  padding: 1,
+  marginBottom: 7,
+  shadowColor: '#000',
+  shadowOpacity: 0.2,
+  shadowRadius: 3,
+  shadowOffset: { width: 0, height: 2 },
+  elevation: 3,
+},
+
+tabMed: {
+  flex: 1,
+  alignItems: 'center',
+  justifyContent: 'center',
+  position: 'relative',
+},
+
+tabLabel: {
+  color: '#202020',
+  fontSize: 9,
+  fontWeight: '600',
+},
+
+tabUnderline: {
+  position: 'absolute',
+  bottom: 0,
+  width: '75%',
+  height: 2,
+  backgroundColor: colors.primary,
+  borderRadius: 2,
+},
+
+laudoCard: {
+  height: 58,
+  borderRadius: 6,
+  backgroundColor: colors.card,
+  borderWidth: 1,
+  borderColor: '#E0E0E0',
+  marginBottom: 5,
+  flexDirection: 'row',
+  alignItems: 'center',
+  paddingHorizontal: 5,
+  shadowColor: '#000',
+  shadowOpacity: 0.05,
+  shadowRadius: 2,
+  shadowOffset: { width: 0, height: 1 },
+  elevation: 1,
+},
+
+statusIconBox: {
+  width: 25,
+  alignItems: 'center',
+  justifyContent: 'center',
+  marginRight: 4,
+},
+
+patientInfo: {
+  flex: 1,
+  justifyContent: 'center',
+},
+
+patientName: {
+  fontSize: 8,
+  color: colors.text,
+  fontWeight: '800',
+},
+
+patientLine: {
+  fontSize: 7,
+  color: colors.text,
+  marginTop: 1,
+},
+
+patientMuted: {
+  fontSize: 7,
+  color: '#565656',
+  marginTop: 1,
+},
+
+rightAction: {
+  width: 42,
+  alignItems: 'center',
+},
+
+rightActionText: {
+  fontSize: 7,
+  color: '#2A2A2A',
+},
+
+bottomNav: {
+  position: 'absolute',
+  left: 0,
+  right: 0,
+  bottom: 0,
+  height: 45,
+  backgroundColor: colors.white,
+  flexDirection: 'row',
+  borderTopWidth: 1,
+  borderTopColor: '#E6E6E6',
+},
+
+bottomItem: {
+  flex: 1,
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: 2,
+},
+
+bottomText: {
+  fontSize: 7,
+  color: '#1D1D1D',
+},
 
   // estilos reutilizados pelas outras telas
   safeHeader: { backgroundColor: colors.white },

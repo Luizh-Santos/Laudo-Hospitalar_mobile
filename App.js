@@ -6,10 +6,6 @@ import { styles } from './src/styles/index.js';
 import { routes } from './src/routes.js';
 import useSimpleNavigation from './src/navigation/useSimpleNavigation.js';
 
-import Home from './src/telas/Home/index.js';
-import Sobre from './src/telas/Sobre/index.js';
-import Funcionalidades from './src/telas/Funcionalidades/index.js';
-import Contato from './src/telas/Contato/index.js';
 import Login from './src/telas/Login/index.js';
 import Esqueci from './src/telas/Esqueci/index.js';
 
@@ -40,10 +36,6 @@ export default function App() {
 
   const screens = useMemo(
     () => ({
-      [routes.home]: Home,
-      [routes.sobre]: Sobre,
-      [routes.funcionalidades]: Funcionalidades,
-      [routes.contato]: Contato,
       [routes.login]: Login,
 
       [routes.esqueci1]: (props) => <Esqueci {...props} step={1} />,

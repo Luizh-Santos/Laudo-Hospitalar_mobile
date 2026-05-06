@@ -1,5 +1,5 @@
 export const routes = {
-  home: 'home', sobre: 'sobre', funcionalidades: 'funcionalidades', contato: 'contato', login: 'login',
+   sobre: 'sobre', funcionalidades: 'funcionalidades', contato: 'contato', login: 'login',
   esqueci1: 'esqueci1', esqueci2: 'esqueci2', esqueci3: 'esqueci3', esqueci4: 'esqueci4', esqueci5: 'esqueci5',
   medicoLaudos: 'medicoLaudos', notificacoes: 'notificacoes', menuPaciente: 'menuPaciente', preencherLaudos: 'preencherLaudos',
   favoritos: 'favoritos', buscarCid: 'buscarCid', buscarProcedimentos: 'buscarProcedimentos', configuracoes: 'configuracoes',
