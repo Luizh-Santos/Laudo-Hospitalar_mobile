@@ -257,6 +257,63 @@ bottomText: {
   color: '#1D1D1D',
 },
 
+notificacaoHeader: {
+  height: 80,
+  backgroundColor: colors.primary,
+  alignItems: 'center',
+  justifyContent: 'center',
+},
+
+notificacaoLogo: {
+  width: 45,
+  height: 45,
+  resizeMode: 'contain',
+},
+
+configHeader: {
+  height: 110,
+  backgroundColor: colors.primary,
+  borderBottomLeftRadius: 16,
+  borderBottomRightRadius: 16,
+  alignItems: 'center',
+  justifyContent: 'center',
+},
+
+configLogo: {
+  width: 48,
+  height: 48,
+  resizeMode: 'contain',
+},
+
+configTitle: {
+  color: colors.white,
+  fontSize: 18,
+  fontWeight: '700',
+  marginTop: 10,
+},
+
+perfilHeader: {
+  height: 130,
+  backgroundColor: colors.primary,
+  borderBottomLeftRadius: 18,
+  borderBottomRightRadius: 18,
+  alignItems: 'center',
+  justifyContent: 'center',
+},
+
+perfilLogo: {
+  width: 52,
+  height: 52,
+  resizeMode: 'contain',
+},
+
+perfilTitle: {
+  color: colors.white,
+  fontSize: 20,
+  fontWeight: '700',
+  marginTop: 10,
+},
+
   // estilos reutilizados pelas outras telas
   safeHeader: { backgroundColor: colors.white },
   header: { height: 58, paddingHorizontal: 14, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderBottomWidth: 1, borderBottomColor: colors.line, backgroundColor: colors.white },

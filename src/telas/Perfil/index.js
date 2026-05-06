@@ -1,8 +1,24 @@
-import React, { useState } from 'react';
-import { Image, ImageBackground, KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, View } from 'react-native';
-import { Feather, MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
-import { styles, colors } from '../../styles';
-import { routes } from '../../routes';
-import { Header, HomeNav, Input, Button, Card, SectionTitle, MedicoLayout, SearchList, ListPage, FormPage } from '../../components';
+import React from 'react';
+import { View, Text, ScrollView } from 'react-native';
 
-export default function Perfil({ nav }) { return <MedicoLayout nav={nav}><FormPage nav={nav} title="Meu Perfil" fields={['Nome','Telefone','Instituição']} button="Alterar" embedded /></MedicoLayout>; }
+import { styles } from '../../styles/index.js';
+import { HeaderPerfil, BottomNav, Card } from '../../components/index.js';
+
+export default function Perfil({ nav }) {
+  return (
+    <View style={styles.flex}>
+      <HeaderPerfil />
+
+      <ScrollView contentContainerStyle={styles.page}>
+        <Card>
+          <Text style={styles.cardTitle}>Dados do perfil</Text>
+          <Text style={styles.info}>Nome: João Marcos França</Text>
+          <Text style={styles.info}>CRM: 000000/SP</Text>
+          <Text style={styles.info}>E-mail: medico@medsync.com</Text>
+        </Card>
+      </ScrollView>
+
+      <BottomNav nav={nav} />
+    </View>
+  );
+}
