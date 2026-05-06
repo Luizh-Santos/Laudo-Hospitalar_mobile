@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { SafeAreaView } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
-import { styles } from './src/styles';
+import { styles } from './src/styles/index.js';
 import { routes } from './src/routes';
 import useSimpleNavigation from './src/navigation/useSimpleNavigation';
 
@@ -34,35 +34,42 @@ export default function App() {
   const nav = useSimpleNavigation();
   const screen = nav.current;
 
-  const Screen = useMemo(() => ({
-    [routes.home]: Home,
-    [routes.sobre]: Sobre,
-    [routes.funcionalidades]: Funcionalidades,
-    [routes.contato]: Contato,
-    [routes.login]: Login,
-    [routes.esqueci1]: (props) => <Esqueci {...props} step={1} />,
-    [routes.esqueci2]: (props) => <Esqueci {...props} step={2} />,
-    [routes.esqueci3]: (props) => <Esqueci {...props} step={3} />,
-    [routes.esqueci4]: (props) => <Esqueci {...props} step={4} />,
-    [routes.esqueci5]: (props) => <Esqueci {...props} step={5} />,
-    [routes.medicoLaudos]: Laudos,
-    [routes.notificacoes]: Notificacoes,
-    [routes.menuPaciente]: MenuPaciente,
-    [routes.preencherLaudos]: PreencherLaudos,
-    [routes.favoritos]: Favoritos,
-    [routes.buscarCid]: BuscarCid,
-    [routes.buscarProcedimentos]: BuscarProcedimentos,
-    [routes.configuracoes]: Configuracoes,
-    [routes.perfil]: Perfil,
-    [routes.seguranca]: Seguranca,
-    [routes.alterarEmail]: AlterarEmail,
-    [routes.alterarSenha]: AlterarSenha,
-    [routes.suporte]: Suporte,
-    [routes.faleConosco]: FaleConosco,
-    [routes.horarios]: Horarios,
-    [routes.termos]: Termos,
-    [routes.adicionarFavoritos]: AdicionarFavoritos,
-  }), [] )[screen] || Home;
+  const screens = useMemo(
+    () => ({
+      [routes.home]: Home,
+      [routes.sobre]: Sobre,
+      [routes.funcionalidades]: Funcionalidades,
+      [routes.contato]: Contato,
+      [routes.login]: Login,
+
+      [routes.esqueci1]: (props) => <Esqueci {...props} step={1} />,
+      [routes.esqueci2]: (props) => <Esqueci {...props} step={2} />,
+      [routes.esqueci3]: (props) => <Esqueci {...props} step={3} />,
+      [routes.esqueci4]: (props) => <Esqueci {...props} step={4} />,
+      [routes.esqueci5]: (props) => <Esqueci {...props} step={5} />,
+
+      [routes.medicoLaudos]: Laudos,
+      [routes.notificacoes]: Notificacoes,
+      [routes.menuPaciente]: MenuPaciente,
+      [routes.preencherLaudos]: PreencherLaudos,
+      [routes.favoritos]: Favoritos,
+      [routes.buscarCid]: BuscarCid,
+      [routes.buscarProcedimentos]: BuscarProcedimentos,
+      [routes.configuracoes]: Configuracoes,
+      [routes.perfil]: Perfil,
+      [routes.seguranca]: Seguranca,
+      [routes.alterarEmail]: AlterarEmail,
+      [routes.alterarSenha]: AlterarSenha,
+      [routes.suporte]: Suporte,
+      [routes.faleConosco]: FaleConosco,
+      [routes.horarios]: Horarios,
+      [routes.termos]: Termos,
+      [routes.adicionarFavoritos]: AdicionarFavoritos,
+    }),
+    []
+  );
+
+  const Screen = screens[screen] || Home;
 
   return (
     <SafeAreaView style={styles.app}>
