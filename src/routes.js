@@ -1,5 +1,5 @@
 export const routes = {
-   sobre: 'sobre', funcionalidades: 'funcionalidades', contato: 'contato', login: 'login',
+  login: 'login',
   esqueci1: 'esqueci1', esqueci2: 'esqueci2', esqueci3: 'esqueci3', esqueci4: 'esqueci4', esqueci5: 'esqueci5',
   medicoLaudos: 'medicoLaudos', notificacoes: 'notificacoes', menuPaciente: 'menuPaciente', preencherLaudos: 'preencherLaudos',
   favoritos: 'favoritos', buscarCid: 'buscarCid', buscarProcedimentos: 'buscarProcedimentos', configuracoes: 'configuracoes',
@@ -8,7 +8,7 @@ export const routes = {
 };
 
 export const routeTitles = {
-  home: 'MedSync', sobre: 'Sobre', funcionalidades: 'Funcionalidades', contato: 'Contato', login: 'Entrar',
+  login: 'Entrar',
   esqueci1: 'Recuperar senha', esqueci2: 'Confirmar e-mail', esqueci3: 'Código', esqueci4: 'Nova senha', esqueci5: 'Concluído',
   medicoLaudos: 'Laudos', notificacoes: 'Notificações', menuPaciente: 'Paciente', preencherLaudos: 'Preencher Laudo',
   favoritos: 'Laudos Favoritos', buscarCid: 'Buscar CID', buscarProcedimentos: 'Buscar Procedimentos', configuracoes: 'Configurações',
