@@ -1,0 +1,8 @@
+import React, { useState } from 'react';
+import { Image, ImageBackground, KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, View } from 'react-native';
+import { Feather, MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
+import { styles, colors } from '../../styles';
+import { routes } from '../../routes';
+import { Header, HomeNav, Input, Button, Card, SectionTitle, MedicoLayout, SearchList, ListPage, FormPage } from '../../components';
+
+export default function PreencherLaudos({ nav }) { const [aba,setAba]=useState('quadro'); return <MedicoLayout nav={nav}><ScrollView contentContainerStyle={styles.page}><View style={styles.tabs}>{['quadro','procedimento'].map(a=><Pressable key={a} onPress={()=>setAba(a)} style={[styles.tab,aba===a&&styles.tabActive]}><Text style={[styles.tabText,aba===a&&styles.tabTextActive]}>{a==='quadro'?'Quadro Clínico':'Procedimento'}</Text></Pressable>)}</View><Pressable onPress={()=>nav.go(routes.favoritos)} style={styles.favorite}><Feather name="star" size={19} color="#c8961a"/><Text style={styles.link}>Favoritar modelo</Text></Pressable>{aba==='quadro'?['Principais sinais e sintomas clínicos','Condições que justificam a internação','Principais resultados de provas diagnósticas','Recursos necessários ao atendimento'].map(x=><Input key={x} placeholder={x} multiline/>):<><Pressable onPress={()=>nav.go(routes.buscarCid)}><Input placeholder="CID"/></Pressable><Pressable onPress={()=>nav.go(routes.buscarProcedimentos)}><Input placeholder="Procedimento"/></Pressable><Input placeholder="Observações" multiline/></>}<Button label="Salvar Laudo" onPress={()=>nav.reset(routes.medicoLaudos)}/></ScrollView></MedicoLayout>; }
