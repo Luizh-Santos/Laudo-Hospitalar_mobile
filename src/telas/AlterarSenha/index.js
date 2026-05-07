@@ -1,8 +1,43 @@
-import React, { useState } from 'react';
-import { Image, ImageBackground, KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, View } from 'react-native';
-import { Feather, MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
-import { styles, colors } from '../../styles';
-import { routes } from '../../routes';
-import { Header, HomeNav, Input, Button, Card, SectionTitle, MedicoLayout, SearchList, ListPage, FormPage } from '../../components';
+import React from 'react';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { Feather } from '@expo/vector-icons';
 
-export default function AlterarSenha({ nav }) { return <MedicoLayout nav={nav}><FormPage nav={nav} title="Alterar Senha" fields={['Senha atual','Nova senha','Confirmar senha']} button="Salvar" embedded secure /></MedicoLayout>; }
+import { styles } from '../../styles/index.js';
+
+export default function AlterarEmail({ nav }) {
+  return (
+    <View style={styles.flex}>
+      <View style={styles.editHeader}>
+        <TouchableOpacity onPress={() => nav.back()} style={styles.editBack}>
+          <Feather name="chevron-left" size={32} color="#FFFFFF" />
+        </TouchableOpacity>
+
+        <Text style={styles.editHeaderTitle}>Alterar Senha</Text>
+      </View>
+
+      <View style={styles.editContent}>
+        <TextInput
+          placeholder="Senha"
+          placeholderTextColor="#777"
+          style={styles.editInput}
+        />
+
+        <TextInput
+          placeholder="Nova Senha"
+          placeholderTextColor="#777"
+          style={styles.editInput}
+        />
+
+        <TextInput
+          placeholder="Confirmar Nova Senha"
+          placeholderTextColor="#777"
+          style={styles.editInput}
+        />
+
+        <TouchableOpacity style={styles.editButton}>
+          <Text style={styles.editButtonText}>CONFIRMAR</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}

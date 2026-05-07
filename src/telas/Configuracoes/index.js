@@ -1,35 +1,67 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
-import { Feather } from '@expo/vector-icons';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 
 import { styles } from '../../styles/index.js';
 import { routes } from '../../routes.js';
-import { HeaderConfig, BottomNav } from '../../components/index.js';
+import { BottomNav } from '../../components/index.js';
 
 export default function Configuracoes({ nav }) {
   return (
     <View style={styles.flex}>
-      <HeaderConfig />
+      <View style={styles.configProfileHeader}>
+        <Feather name="user" size={92} color="#FFFFFF" />
+        <Text style={styles.configProfileName}>Configurações</Text>
+      </View>
 
-      <ScrollView contentContainerStyle={styles.page}>
-        <TouchableOpacity style={styles.configItem} onPress={() => nav.go(routes.perfil)}>
-          <Feather name="user" size={22} color="#213D4C" />
-          <Text style={styles.configText}>Perfil</Text>
-          <Feather name="chevron-right" size={22} color="#213D4C" />
+      <View style={styles.configMenu}>
+        <TouchableOpacity
+          style={styles.configMenuItem}
+          onPress={() => nav.go(routes.perfil)}
+        >
+          <MaterialCommunityIcons name="account-group" size={24} color="#222" />
+          <Text style={styles.configMenuText}>Meu Perfil</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.configItem} onPress={() => nav.go(routes.seguranca)}>
-          <Feather name="lock" size={22} color="#213D4C" />
-          <Text style={styles.configText}>Segurança e acesso</Text>
-          <Feather name="chevron-right" size={22} color="#213D4C" />
+        <TouchableOpacity
+          style={styles.configMenuItem}
+          onPress={() => nav.go(routes.adicionarFavoritos)}
+        >
+          <Feather name="star" size={24} color="#222" />
+          <Text style={styles.configMenuText}>Adicionar laudos Favoritos</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.configItem} onPress={() => nav.go(routes.suporte)}>
-          <Feather name="help-circle" size={22} color="#213D4C" />
-          <Text style={styles.configText}>Suporte</Text>
-          <Feather name="chevron-right" size={22} color="#213D4C" />
+        <TouchableOpacity
+          style={styles.configMenuItem}
+          onPress={() => nav.go(routes.seguranca)}
+        >
+          <Feather name="lock" size={24} color="#222" />
+          <Text style={styles.configMenuText}>Segurança e Acesso</Text>
         </TouchableOpacity>
-      </ScrollView>
+
+        <TouchableOpacity
+          style={styles.configMenuItem}
+          onPress={() => nav.go(routes.suporte)}
+        >
+          <Feather name="life-buoy" size={24} color="#222" />
+          <Text style={styles.configMenuText}>Suporte</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.configMenuItem}
+          onPress={() => nav.go(routes.termos)}
+        >
+          <Feather name="file-text" size={24} color="#222" />
+          <Text style={styles.configMenuText}>Termos de Uso e Privacidade</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.logoutButton}
+          onPress={() => nav.reset(routes.login)}
+        >
+          <Text style={styles.logoutButtonText}>SAIR</Text>
+        </TouchableOpacity>
+      </View>
 
       <BottomNav nav={nav} />
     </View>

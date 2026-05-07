@@ -2,378 +2,723 @@ import { StyleSheet } from 'react-native';
 
 export const colors = {
   primary: '#213D4C',
-  primaryDark: '#1F3B4A',
   bg: '#F4F4F4',
   card: '#FFFFFF',
   text: '#101820',
   muted: '#6E767C',
   line: '#D7D7D7',
-  inputBorder: '#213D4C',
   danger: '#FF2D2D',
   success: '#18C51B',
   white: '#FFFFFF',
 };
 
 export const styles = StyleSheet.create({
-  app: { flex: 1, backgroundColor: colors.bg },
-  flex: { flex: 1, backgroundColor: colors.bg },
+  app: {
+    flex: 1,
+    backgroundColor: colors.bg,
+  },
 
-  // LOGIN MEDSYNC
+  flex: {
+    flex: 1,
+    backgroundColor: colors.bg,
+  },
+
+  // LOGIN
+
   loginPage: {
     flex: 1,
     backgroundColor: '#F4F4F4',
     alignItems: 'center',
-    paddingHorizontal: 23,
-    paddingTop: 50,
+    paddingHorizontal: 34,
+    paddingTop: 95,
   },
+
   loginLogo: {
-    width: 80,
-    height: 80,
+    width: 132,
+    height: 132,
     resizeMode: 'contain',
-    marginTop: 2,
-    marginBottom: 58,
+    marginBottom: 90,
   },
+
   loginForm: {
     width: '100%',
-    gap: 16,
     alignItems: 'center',
+    gap: 24,
   },
+
   medInputWrap: {
     width: '100%',
-    height: 22,
-    borderWidth: 1.5,
-    borderColor: colors.inputBorder,
-    borderRadius: 5,
+    height: 34,
+    borderWidth: 2,
+    borderColor: '#213D4C',
+    borderRadius: 8,
     backgroundColor: '#FFFFFF',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 6,
+  },
+
+  medInput: {
+    flex: 1,
+    height: '100%',
+    paddingVertical: 0,
+    paddingHorizontal: 5,
+    fontSize: 13,
+    color: '#101820',
+  },
+
+  forgotLink: {
+    fontSize: 11,
+    color: '#9A9A9A',
+    textDecorationLine: 'underline',
+    marginTop: -8,
+  },
+
+  loginButton: {
+    marginTop: 42,
+    backgroundColor: '#213D4C',
+    borderRadius: 13,
+    width: 80,
+    height: 35,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  loginButtonText: {
+    color: '#FFFFFF',
+    fontSize: 13,
+    fontWeight: '700',
+  },
+
+  // HEADER LAUDOS
+
+  medicoHeader: {
+    height: 132,
+    backgroundColor: colors.primary,
+    
+    paddingHorizontal: 7,
+    
+  },
+
+  whiteLogo: {
+    width: 52,
+    height: 52,
+    resizeMode: 'contain',
+    alignSelf: 'center',
+    marginTop: 12,
+  },
+
+  screenTitle: {
+    color: colors.white,
+    fontSize: 20,
+    fontWeight: '800',
+    marginTop: 10,
+  },
+
+  searchRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    marginTop: 7,
+  },
+
+  searchBox: {
+    flex: 1,
+    height: 22,
+    backgroundColor: colors.white,
+    borderRadius: 5,
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 4,
   },
-  medInput: {
+
+  searchInput: {
     flex: 1,
     paddingVertical: 0,
-    paddingHorizontal: 3,
     fontSize: 10,
-    color: colors.text,
     height: '100%',
+    color: colors.text,
   },
-  forgotLink: {
-    fontSize: 9,
-    color: '#9A9A9A',
-    textDecorationLine: 'underline',
-    marginTop: -6,
-  },
-  loginButton: {
-    marginTop: 34,
-    backgroundColor: colors.primary,
-    borderRadius: 9,
-    width: 54,
-    height: 24,
+
+  filterBtn: {
+    width: 18,
+    height: 22,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  loginButtonText: {
-    color: colors.white,
-    fontSize: 9,
-    fontWeight: '700',
-  },
 
-  // HEADER / LAYOUT MEDICO
- medicoHeader: {
-  height: 132,
+  // NOTIFICAÇÕES
+
+notificacaoHeader: {
+  height: 150,
   backgroundColor: colors.primary,
-  paddingTop: 22,
-  paddingHorizontal: 7,
-  marginBottom: 8,
-},
-
-whiteLogo: {
-  width: 52,
-  height: 52,
-  resizeMode: 'contain',
-  alignSelf: 'center',
-},
-
-screenTitle: {
-  color: colors.white,
-  fontSize: 20,
-  fontWeight: '800',
-
-},
-
-searchRow: {
-  flexDirection: 'row',
-  alignItems: 'center',
-  gap: 6,
-  marginTop: 7,
-},
-
-searchBox: {
-  flex: 1,
-  height: 22,
-  backgroundColor: colors.white,
-  borderRadius: 5,
-  flexDirection: 'row',
-  alignItems: 'center',
-  paddingHorizontal: 4,
-},
-
-searchInput: {
-  flex: 1,
-  paddingVertical: 0,
-  fontSize: 10,
-  height: '100%',
-  color: colors.text,
-},
-
-filterBtn: {
-  width: 18,
-  height: 22,
   alignItems: 'center',
   justifyContent: 'center',
+  borderBottomRightRadius: 3,
+  borderBottomLeftRadius: 3,
 },
 
-contentFlat: {
+notificacaoLogo: {
+  width: 58,
+  height: 58,
+  resizeMode: 'contain',
+},
+
+notificacaoContent: {
   flex: 1,
-  paddingHorizontal: 4,
+  paddingTop: 22,
+  paddingHorizontal: 16,
   paddingBottom: 70,
   backgroundColor: colors.bg,
 },
 
-tabsWrap: {
-  height: 29,
-  backgroundColor: '#DFDFDF',
-  borderRadius: 4,
+notificacaoItem: {
+  minHeight: 62,
   flexDirection: 'row',
-  padding: 1,
-  marginBottom: 7,
-  shadowColor: '#000',
-  shadowOpacity: 0.2,
-  shadowRadius: 3,
-  shadowOffset: { width: 0, height: 2 },
-  elevation: 3,
+  alignItems: 'flex-start',
+  borderBottomWidth: 1,
+  borderBottomColor: '#D9D9D9',
+  paddingBottom: 8,
+  marginBottom: 8,
 },
 
-tabMed: {
+notificacaoIconLogo: {
+  width: 34,
+  height: 34,
+  resizeMode: 'contain',
+  marginRight: 8,
+  marginTop: 0,
+},
+
+notificacaoTextArea: {
   flex: 1,
-  alignItems: 'center',
-  justifyContent: 'center',
-  position: 'relative',
 },
 
-tabLabel: {
-  color: '#202020',
-  fontSize: 9,
-  fontWeight: '600',
-},
-
-tabUnderline: {
-  position: 'absolute',
-  bottom: 0,
-  width: '75%',
-  height: 2,
-  backgroundColor: colors.primary,
-  borderRadius: 2,
-},
-
-laudoCard: {
-  height: 58,
-  borderRadius: 6,
-  backgroundColor: colors.card,
-  borderWidth: 1,
-  borderColor: '#E0E0E0',
-  marginBottom: 5,
-  flexDirection: 'row',
-  alignItems: 'center',
-  paddingHorizontal: 5,
-  shadowColor: '#000',
-  shadowOpacity: 0.05,
-  shadowRadius: 2,
-  shadowOffset: { width: 0, height: 1 },
-  elevation: 1,
-},
-
-statusIconBox: {
-  width: 25,
-  alignItems: 'center',
-  justifyContent: 'center',
-  marginRight: 4,
-},
-
-patientInfo: {
-  flex: 1,
-  justifyContent: 'center',
-},
-
-patientName: {
-  fontSize: 8,
+notificacaoTitle: {
+  fontSize: 13,
+  fontWeight: '800',
   color: colors.text,
+  marginBottom: 4,
+},
+
+notificacaoPatientRow: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  gap: 4,
+},
+
+notificacaoPatient: {
+  fontSize: 10,
+  color: colors.text,
+  textTransform: 'uppercase',
+},
+
+notificacaoTime: {
+  position: 'absolute',
+  right: 0,
+  bottom: 7,
+  fontSize: 9,
+  color: '#8E8E8E',
+},
+
+  // CONFIG
+
+ configProfileHeader: {
+  height: 150,
+  backgroundColor: colors.primary,
+  alignItems: 'center',
+  justifyContent: 'center',
+  borderBottomRightRadius: 3,
+  borderBottomLeftRadius: 3,
+},
+
+configProfileName: {
+  color: '#EAEAEA',
+  fontSize: 16,
+  marginTop: 8,
+},
+
+configMenu: {
+  flex: 1,
+  paddingTop: 22,
+  paddingHorizontal: 14,
+  backgroundColor: colors.bg,
+},
+
+configMenuItem: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  marginBottom: 28,
+},
+
+configMenuText: {
+  fontSize: 17,
+  color: '#2A2A2A',
+  marginLeft: 10,
+},
+
+logoutButton: {
+  marginTop: 28,
+  alignSelf: 'center',
+  width: 65,
+  height: 36,
+  borderRadius: 12,
+  backgroundColor: '#E00000',
+  alignItems: 'center',
+  justifyContent: 'center',
+  shadowColor: '#000',
+  shadowOpacity: 0.25,
+  shadowRadius: 4,
+  shadowOffset: { width: 0, height: 3 },
+  elevation: 5,
+},
+
+logoutButtonText: {
+  color: '#FFFFFF',
+  fontSize: 13,
+  fontWeight: '800',
+},
+  // PERFIL
+
+  profileEditHeader: {
+  height: 197,
+  backgroundColor: colors.primary,
+  alignItems: 'center',
+  justifyContent: 'center',
+  borderBottomLeftRadius: 3,
+  borderBottomRightRadius: 3,
+},
+
+profilePhotoText: {
+  color: '#DADADA',
+  fontSize: 16,
+  marginTop: 8,
+},
+
+profileForm: {
+  flex: 1,
+  paddingTop: 22,
+  paddingHorizontal: 12,
+  backgroundColor: colors.bg,
+},
+
+profileLabel: {
+  fontSize: 16,
+  color: colors.text,
+  marginBottom: 7,
+},
+
+profileInput: {
+  height: 35,
+  borderWidth: 1,
+  borderColor: '#BFBFBF',
+  borderRadius: 4,
+  backgroundColor: '#F7F7F7',
+  marginBottom: 15,
+  paddingHorizontal: 8,
+  fontSize: 13,
+  color: colors.text,
+},
+
+profileButton: {
+  alignSelf: 'center',
+  marginTop: 44,
+  height: 36,
+  paddingHorizontal: 15,
+  borderRadius: 10,
+  backgroundColor: colors.primary,
+  alignItems: 'center',
+  justifyContent: 'center',
+  shadowColor: '#000',
+  shadowOpacity: 0.25,
+  shadowRadius: 4,
+  shadowOffset: { width: 0, height: 3 },
+  elevation: 5,
+},
+
+profileButtonText: {
+  color: '#FFFFFF',
+  fontSize: 13,
+  fontWeight: '700',
+},
+
+  // LAUDOS
+
+  contentFlat: {
+    flex: 1,
+    paddingHorizontal: 4,
+    paddingTop: 9,
+    paddingBottom: 70,
+    backgroundColor: colors.bg,
+  },
+
+  tabsWrap: {
+    height: 29,
+    backgroundColor: '#DFDFDF',
+    borderRadius: 4,
+    flexDirection: 'row',
+    padding: 1,
+    marginBottom: 7,
+  },
+
+  tabMed: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+  },
+
+  tabLabel: {
+    color: '#202020',
+    fontSize: 9,
+    fontWeight: '600',
+  },
+
+  tabUnderline: {
+    position: 'absolute',
+    bottom: 0,
+    width: '75%',
+    height: 2,
+    backgroundColor: colors.primary,
+  },
+
+  laudoCard: {
+    height: 58,
+    borderRadius: 6,
+    backgroundColor: colors.card,
+    borderWidth: 1,
+    borderColor: '#E0E0E0',
+    marginBottom: 5,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 5,
+  },
+
+  statusIconBox: {
+    width: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 4,
+  },
+
+  patientInfo: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+
+  patientName: {
+    fontSize: 8,
+    color: colors.text,
+    fontWeight: '800',
+  },
+
+  patientLine: {
+    fontSize: 7,
+    color: colors.text,
+    marginTop: 1,
+  },
+
+  patientMuted: {
+    fontSize: 7,
+    color: '#565656',
+    marginTop: 1,
+  },
+
+  // NAVBAR
+
+  bottomNav: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    height: 50,
+    backgroundColor: colors.white,
+    flexDirection: 'row',
+    borderTopWidth: 1,
+    borderTopColor: '#E6E6E6',
+  },
+
+  bottomItem: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 2,
+  },
+
+  bottomText: {
+    fontSize: 13,
+    color: '#1D1D1D',
+  },
+
+  // GERAIS
+
+  page: {
+    padding: 18,
+    paddingBottom: 80,
+    gap: 14,
+  },
+
+  card: {
+    backgroundColor: colors.white,
+    borderRadius: 18,
+    padding: 18,
+  },
+
+  cardTitle: {
+    fontSize: 16,
+    fontWeight: '800',
+    color: colors.text,
+  },
+
+  info: {
+    fontSize: 14,
+    color: colors.text,
+    marginTop: 8,
+  },
+
+  configItem: {
+    backgroundColor: colors.white,
+    borderRadius: 18,
+    padding: 16,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 14,
+  },
+
+  configText: {
+    flex: 1,
+    fontSize: 15,
+    fontWeight: '800',
+    color: colors.text,
+  },
+
+editHeader: {
+  height: 118,
+  backgroundColor: colors.primary,
+  borderBottomLeftRadius: 3,
+  borderBottomRightRadius: 3,
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+  shadowColor: '#000',
+  shadowOpacity: 0.25,
+  shadowRadius: 5,
+  shadowOffset: { width: 0, height: 4 },
+  elevation: 6,
+},
+
+editBack: {
+  position: 'absolute',
+  left: 12,
+  top: 45,
+},
+
+editHeaderTitle: {
+  color: '#FFFFFF',
+  fontSize: 20,
   fontWeight: '800',
 },
 
-patientLine: {
-  fontSize: 7,
-  color: colors.text,
-  marginTop: 1,
-},
-
-patientMuted: {
-  fontSize: 7,
-  color: '#565656',
-  marginTop: 1,
-},
-
-rightAction: {
-  width: 42,
-  alignItems: 'center',
-},
-
-rightActionText: {
-  fontSize: 7,
-  color: '#2A2A2A',
-},
-
-bottomNav: {
-  position: 'absolute',
-  left: 0,
-  right: 0,
-  bottom: 0,
-  height: 45,
-  backgroundColor: colors.white,
-  flexDirection: 'row',
-  borderTopWidth: 1,
-  borderTopColor: '#E6E6E6',
-},
-
-bottomItem: {
+editContent: {
   flex: 1,
-  alignItems: 'center',
-  justifyContent: 'center',
-  gap: 2,
+  paddingTop: 32,
+  paddingHorizontal: 38,
+  backgroundColor: colors.bg,
 },
 
-bottomText: {
-  fontSize: 7,
-  color: '#1D1D1D',
+editInput: {
+  borderWidth: 1.8,
+  borderColor: colors.primary,
+  borderRadius: 8,
+  backgroundColor: '#FFFFFF',
+  paddingHorizontal: 6,
+  fontSize: 14,
+  color: colors.text,
+  marginBottom: 40,
+  shadowColor: '#000',
+  shadowOpacity: 0.25,
+  shadowRadius: 3,
+  shadowOffset: { width: 0, height: 2 },
+  elevation: 4,
 },
 
-notificacaoHeader: {
-  height: 80,
+editButton: {
+  alignSelf: 'center',
+  marginTop: 16,
+  height: 34,
+  paddingHorizontal: 17,
+  borderRadius: 10,
   backgroundColor: colors.primary,
   alignItems: 'center',
   justifyContent: 'center',
+  shadowColor: '#000',
+  shadowOpacity: 0.25,
+  shadowRadius: 4,
+  shadowOffset: { width: 0, height: 3 },
+  elevation: 5,
 },
 
-notificacaoLogo: {
-  width: 45,
-  height: 45,
-  resizeMode: 'contain',
+editButtonText: {
+  color: '#FFFFFF',
+  fontSize: 13,
+  fontWeight: '700',
+},
+supportTextarea: {
+  height: 170,
+  borderWidth: 1.8,
+  borderColor: colors.primary,
+  borderRadius: 8,
+  backgroundColor: '#FFFFFF',
+  paddingHorizontal: 10,
+  paddingTop: 10,
+  fontSize: 14,
+  color: colors.text,
+  textAlignVertical: 'top',
+  marginBottom: 40,
+  shadowColor: '#000',
+  shadowOpacity: 0.25,
+  shadowRadius: 3,
+  shadowOffset: { width: 0, height: 2 },
+  elevation: 4,
 },
 
-configHeader: {
-  height: 110,
-  backgroundColor: colors.primary,
-  borderBottomLeftRadius: 16,
-  borderBottomRightRadius: 16,
-  alignItems: 'center',
-  justifyContent: 'center',
+horariosContent: {
+  padding: 24,
+  gap: 20,
 },
 
-configLogo: {
-  width: 48,
-  height: 48,
-  resizeMode: 'contain',
+horarioCard: {
+  backgroundColor: '#FFFFFF',
+  borderRadius: 12,
+  padding: 20,
+  shadowColor: '#000',
+  shadowOpacity: 0.15,
+  shadowRadius: 4,
+  shadowOffset: { width: 0, height: 2 },
+  elevation: 4,
 },
 
-configTitle: {
-  color: colors.white,
+horarioTitle: {
   fontSize: 18,
   fontWeight: '700',
-  marginTop: 10,
+  color: colors.primary,
+  marginBottom: 12,
 },
 
-perfilHeader: {
-  height: 130,
+horarioText: {
+  fontSize: 15,
+  color: colors.text,
+  marginBottom: 6,
+},
+favoriteHeader: {
+  height: 119,
   backgroundColor: colors.primary,
-  borderBottomLeftRadius: 18,
-  borderBottomRightRadius: 18,
+  borderBottomLeftRadius: 3,
+  borderBottomRightRadius: 3,
+  flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'center',
+  shadowColor: '#000',
+  shadowOpacity: 0.25,
+  shadowRadius: 5,
+  shadowOffset: { width: 0, height: 4 },
+  elevation: 6,
 },
 
-perfilLogo: {
-  width: 52,
-  height: 52,
-  resizeMode: 'contain',
-},
-
-perfilTitle: {
-  color: colors.white,
+favoriteHeaderTitle: {
+  color: '#FFFFFF',
   fontSize: 20,
-  fontWeight: '700',
-  marginTop: 10,
+  fontWeight: '800',
 },
 
-  // estilos reutilizados pelas outras telas
-  safeHeader: { backgroundColor: colors.white },
-  header: { height: 58, paddingHorizontal: 14, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderBottomWidth: 1, borderBottomColor: colors.line, backgroundColor: colors.white },
-  headerIcon: { width: 42, height: 42, alignItems: 'center', justifyContent: 'center' },
-  headerTitle: { fontSize: 17, fontWeight: '700', color: colors.text },
-  headerLogin: { paddingHorizontal: 12, paddingVertical: 8, borderRadius: 12, backgroundColor: '#eef5f6' },
-  headerLoginText: { fontSize: 12, fontWeight: '700', color: colors.primary },
-  homeNav: { flexDirection: 'row', backgroundColor: colors.white, paddingHorizontal: 8, paddingVertical: 8, gap: 6, borderBottomWidth: 1, borderBottomColor: colors.line },
-  homeNavBtn: { flex: 1, paddingVertical: 9, borderRadius: 12, alignItems: 'center' },
-  homeNavBtnActive: { backgroundColor: colors.primary },
-  homeNavText: { fontSize: 11, color: colors.muted, fontWeight: '700' },
-  homeNavTextActive: { color: colors.white },
-  medicoNav: { flexDirection: 'row', backgroundColor: colors.primary, padding: 8, gap: 8 },
-  medicoNavBtn: { flex: 1, alignItems: 'center', gap: 3, paddingVertical: 8, borderRadius: 12, backgroundColor: 'rgba(255,255,255,0.10)' },
-  medicoNavText: { fontSize: 11, color: colors.white, fontWeight: '700' },
-  hero: { flex: 1, justifyContent: 'center' },
-  overlay: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(0,0,0,0.58)' },
-  heroContent: { padding: 26, alignItems: 'center' },
-  heroTitle: { fontSize: 28, lineHeight: 39, color: colors.white, textAlign: 'center', fontWeight: '300' },
-  heroLine: { width: 100, height: 1, backgroundColor: colors.white, marginVertical: 18 },
-  heroSub: { fontSize: 14, lineHeight: 22, color: '#eaeaea', textAlign: 'center', marginBottom: 28 },
-  page: { padding: 18, paddingBottom: 34, gap: 14 },
-  centerPage: { flex: 1, justifyContent: 'center', padding: 20 },
-  banner: { height: 250, borderRadius: 24, overflow: 'hidden', justifyContent: 'flex-end', padding: 22, marginBottom: 4 },
-  bannerTitle: { fontSize: 25, lineHeight: 32, color: colors.white, fontWeight: '700' },
-  bannerText: { fontSize: 14, lineHeight: 21, color: '#eef2f4', marginTop: 10 },
-  card: { backgroundColor: colors.white, borderRadius: 22, padding: 18, shadowColor: '#1f3c4d', shadowOpacity: 0.10, shadowRadius: 16, shadowOffset: { width: 0, height: 8 }, elevation: 3, gap: 12 },
-  miniCard: { flex: 1, minWidth: '45%' },
-  grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 },
-  rowCenter: { flexDirection: 'row', alignItems: 'center', gap: 10 },
-  rowBetween: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10 },
-  title: { fontSize: 24, fontWeight: '800', color: colors.text, marginBottom: 6 },
-  subtitle: { fontSize: 14, lineHeight: 21, color: colors.muted, marginBottom: 12 },
-  cardTitle: { fontSize: 16, fontWeight: '800', color: colors.text },
-  cardText: { fontSize: 14, lineHeight: 21, color: colors.muted },
-  bullet: { fontSize: 14, lineHeight: 23, color: colors.muted },
-  info: { fontSize: 15, color: colors.text, marginVertical: 3 },
-  input: { minHeight: 50, borderWidth: 1.6, borderColor: '#314b5d', borderRadius: 14, paddingHorizontal: 14, backgroundColor: 'rgba(255,255,255,0.9)', fontSize: 15, color: colors.text },
-  textarea: { minHeight: 118, paddingTop: 14, textAlignVertical: 'top' },
-  button: { minHeight: 46, borderRadius: 14, backgroundColor: colors.primary, paddingHorizontal: 18, alignItems: 'center', justifyContent: 'center', marginTop: 4 },
-  buttonText: { color: colors.white, fontWeight: '800', fontSize: 14 },
-  buttonSecondary: { backgroundColor: '#eef4f5', borderWidth: 1, borderColor: colors.line },
-  buttonSecondaryText: { color: colors.text },
-  buttonDanger: { backgroundColor: '#b94a48' },
-  logo: { width: 260, height: 95, resizeMode: 'contain', marginBottom: 20 },
-  loginCard: { width: '100%', maxWidth: 380 },
-  link: { color: colors.text, textDecorationLine: 'underline', fontWeight: '600', fontSize: 13 },
-  backBottom: { position: 'absolute', left: 26, bottom: 28, flexDirection: 'row', gap: 8, alignItems: 'center' },
-  backText: { fontSize: 12, color: colors.text, fontWeight: '700' },
-  tabs: { flexDirection: 'row', backgroundColor: '#e8eef1', borderRadius: 16, padding: 5, gap: 6 },
-  tab: { flex: 1, paddingVertical: 11, borderRadius: 12, alignItems: 'center' },
-  tabActive: { backgroundColor: colors.primary },
-  tabText: { textTransform: 'capitalize', fontWeight: '800', color: colors.muted, fontSize: 12 },
-  tabTextActive: { color: colors.white },
-  circleBtn: { width: 42, height: 42, borderRadius: 21, backgroundColor: '#0aa4aa', alignItems: 'center', justifyContent: 'center' },
-  favorite: { flexDirection: 'row', alignItems: 'center', gap: 8, alignSelf: 'flex-start' },
-  configItem: { backgroundColor: colors.white, borderRadius: 18, padding: 16, flexDirection: 'row', alignItems: 'center', gap: 14, shadowColor: '#1f3c4d', shadowOpacity: 0.08, shadowRadius: 10, shadowOffset: { width: 0, height: 5 }, elevation: 2 },
-  configText: { flex: 1, fontSize: 15, fontWeight: '800', color: colors.text },
-  teamRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 },
-  member: { width: '47%', backgroundColor: colors.white, borderRadius: 18, padding: 12, alignItems: 'center' },
-  memberImg: { width: 74, height: 74, borderRadius: 37, marginBottom: 8 },
-  memberName: { fontWeight: '800', color: colors.text, fontSize: 12, textAlign: 'center' },
+favoriteContent: {
+  flex: 1,
+  backgroundColor: colors.bg,
+  paddingHorizontal: 13,
+  paddingTop: 12,
+},
+
+favoriteSearchBox: {
+  height: 34,
+  borderWidth: 1.4,
+  borderColor: colors.primary,
+  borderRadius: 6,
+  backgroundColor: '#FFFFFF',
+  flexDirection: 'row',
+  alignItems: 'center',
+  paddingLeft: 8,
+  paddingRight: 5,
+  marginBottom: 26,
+  shadowColor: '#000',
+  shadowOpacity: 0.25,
+  shadowRadius: 3,
+  shadowOffset: { width: 0, height: 2 },
+  elevation: 4,
+},
+
+favoriteSearchInput: {
+  flex: 1,
+  height: '100%',
+  paddingVertical: 0,
+  fontSize: 13,
+  color: colors.text,
+},
+
+favoriteList: {
+  gap: 7,
+},
+
+favoriteCard: {
+  height: 51,
+  backgroundColor: '#FFFFFF',
+  borderRadius: 7,
+  flexDirection: 'row',
+  alignItems: 'center',
+  paddingHorizontal: 8,
+},
+
+favoriteCardText: {
+  flex: 1,
+  marginLeft: 13,
+  fontSize: 14,
+  fontWeight: '700',
+  color: colors.text,
+},
+
+favoriteActions: {
+  flexDirection: 'row',
+  gap: 12,
+},
+
+favoriteAction: {
+  alignItems: 'center',
+},
+
+favoriteActionText: {
+  fontSize: 8,
+  color: '#333',
+  marginTop: -2,
+},
+
+favoriteAddButton: {
+  alignSelf: 'center',
+  marginTop: 60,
+  height: 34,
+  paddingHorizontal: 17,
+  borderRadius: 10,
+  backgroundColor: '#17B90C',
+  alignItems: 'center',
+  justifyContent: 'center',
+  shadowColor: '#000',
+  shadowOpacity: 0.25,
+  shadowRadius: 4,
+  shadowOffset: { width: 0, height: 3 },
+  elevation: 5,
+},
+
+favoriteAddButtonText: {
+  color: '#FFFFFF',
+  fontSize: 13,
+  fontWeight: '700',
+},
 });

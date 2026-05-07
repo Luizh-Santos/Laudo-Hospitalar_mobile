@@ -1,8 +1,46 @@
-import React, { useState } from 'react';
-import { Image, ImageBackground, KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, View } from 'react-native';
-import { Feather, MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
-import { styles, colors } from '../../styles';
-import { routes } from '../../routes';
-import { Header, HomeNav, Input, Button, Card, SectionTitle, MedicoLayout, SearchList, ListPage, FormPage } from '../../components';
+import React from 'react';
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { Feather } from '@expo/vector-icons';
 
-export default function Termos({ nav }) { return <MedicoLayout nav={nav}><ScrollView contentContainerStyle={styles.page}><Card><Text style={styles.cardTitle}>Termos de Uso e Privacidade</Text><Text style={styles.cardText}>O sistema MedSync utiliza informações hospitalares apenas para apoio aos fluxos de laudos, mantendo foco em segurança, rastreabilidade e uso responsável dos dados.</Text></Card></ScrollView></MedicoLayout>; }
+import { styles } from '../../styles/index.js';
+import { routes } from '../../routes.js';
+import { BottomNav } from '../../components/index.js';
+
+export default function Termos({ nav }) {
+  return (
+    <View style={styles.flex}>
+      <View style={styles.configProfileHeader}>
+        <Feather name="file-text" size={72} color="#FFFFFF" />
+        <Text style={styles.configProfileName}>Termos de Uso</Text>
+      </View>
+
+      <ScrollView contentContainerStyle={styles.page}>
+        <Text style={styles.cardTitle}>Termos de Uso e Privacidade</Text>
+
+        <Text style={styles.info}>
+          Este aplicativo é destinado ao auxílio no gerenciamento e preenchimento
+          de laudos hospitalares.
+        </Text>
+
+        <Text style={styles.info}>
+          As informações exibidas devem ser utilizadas apenas por usuários
+          autorizados.
+        </Text>
+
+        <Text style={styles.info}>
+          O acesso, uso e compartilhamento de dados devem respeitar as normas de
+          segurança e privacidade da instituição.
+        </Text>
+
+        <TouchableOpacity
+          style={styles.logoutButton}
+          onPress={() => nav.go(routes.configuracoes)}
+        >
+          <Text style={styles.logoutButtonText}>VOLTAR</Text>
+        </TouchableOpacity>
+      </ScrollView>
+
+      <BottomNav nav={nav} />
+    </View>
+  );
+}

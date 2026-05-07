@@ -1,8 +1,45 @@
-import React, { useState } from 'react';
-import { Image, ImageBackground, KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, View } from 'react-native';
-import { Feather, MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
-import { styles, colors } from '../../styles';
-import { routes } from '../../routes';
-import { Header, HomeNav, Input, Button, Card, SectionTitle, MedicoLayout, SearchList, ListPage, FormPage } from '../../components';
+import React from 'react';
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { Feather } from '@expo/vector-icons';
 
-export default function Seguranca({ nav }) { return <MedicoLayout nav={nav}><ScrollView contentContainerStyle={styles.page}><Button label="Alterar E-mail" onPress={()=>nav.go(routes.alterarEmail)}/><Button label="Alterar Senha" onPress={()=>nav.go(routes.alterarSenha)} secondary/></ScrollView></MedicoLayout>; }
+import { styles } from '../../styles/index.js';
+import { routes } from '../../routes.js';
+import { BottomNav } from '../../components/index.js';
+
+export default function Seguranca({ nav }) {
+  return (
+    <View style={styles.flex}>
+      <View style={styles.configProfileHeader}>
+        <Feather name="lock" size={72} color="#FFFFFF" />
+        <Text style={styles.configProfileName}>Segurança e Acesso</Text>
+      </View>
+
+      <ScrollView contentContainerStyle={styles.page}>
+        <TouchableOpacity
+          style={styles.configMenuItem}
+          onPress={() => nav.go(routes.alterarEmail)}
+        >
+          <Feather name="mail" size={24} color="#222" />
+          <Text style={styles.configMenuText}>Alterar E-mail</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.configMenuItem}
+          onPress={() => nav.go(routes.alterarSenha)}
+        >
+          <Feather name="key" size={24} color="#222" />
+          <Text style={styles.configMenuText}>Alterar Senha</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.logoutButton}
+          onPress={() => nav.go(routes.configuracoes)}
+        >
+          <Text style={styles.logoutButtonText}>VOLTAR</Text>
+        </TouchableOpacity>
+      </ScrollView>
+
+      <BottomNav nav={nav} />
+    </View>
+  );
+}

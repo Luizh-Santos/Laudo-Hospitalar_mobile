@@ -57,12 +57,14 @@ export default function App() {
       [routes.seguranca]: Seguranca,
       [routes.suporte]: Suporte,
       [routes.termos]: Termos,
+      [routes.adicionarFavoritos]: AdicionarFavoritos,
+     
 
       [routes.alterarEmail]: AlterarEmail,
       [routes.alterarSenha]: AlterarSenha,
       [routes.faleConosco]: FaleConosco,
       [routes.horarios]: Horarios,
-      [routes.adicionarFavoritos]: AdicionarFavoritos,
+      
     }),
     []
   );
