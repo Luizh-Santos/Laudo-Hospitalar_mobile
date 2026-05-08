@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
+import { routes } from '../../routes.js';
 
 import { styles } from '../../styles/index.js';
 
@@ -10,7 +11,16 @@ export default function AdicionarFavoritos({ nav }) {
   return (
     <View style={styles.flex}>
       <View style={styles.favoriteHeader}>
-        <TouchableOpacity onPress={() => nav.back()} style={styles.editBack}>
+        <TouchableOpacity
+  onPress={() => {
+    if (nav.current === routes.favoritosConfig) {
+      nav.reset(routes.configuracoes);
+    } else {
+      nav.reset(routes.medicoLaudos);
+    }
+  }}
+  style={styles.editBack}
+>
           <Feather name="chevron-left" size={32} color="#FFFFFF" />
         </TouchableOpacity>
 

@@ -12,6 +12,9 @@ export const colors = {
   white: '#FFFFFF',
 };
 
+const HEADER_HEIGHT = 150;
+const NAV_HEIGHT = 64;
+
 export const styles = StyleSheet.create({
   app: {
     flex: 1,
@@ -24,10 +27,9 @@ export const styles = StyleSheet.create({
   },
 
   // LOGIN
-
   loginPage: {
     flex: 1,
-    backgroundColor: '#F4F4F4',
+    backgroundColor: colors.bg,
     alignItems: 'center',
     paddingHorizontal: 34,
     paddingTop: 95,
@@ -48,14 +50,14 @@ export const styles = StyleSheet.create({
 
   medInputWrap: {
     width: '100%',
-    height: 34,
+    height: 38,
     borderWidth: 2,
-    borderColor: '#213D4C',
+    borderColor: colors.primary,
     borderRadius: 8,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: colors.white,
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 6,
+    paddingHorizontal: 8,
   },
 
   medInput: {
@@ -63,12 +65,12 @@ export const styles = StyleSheet.create({
     height: '100%',
     paddingVertical: 0,
     paddingHorizontal: 5,
-    fontSize: 13,
-    color: '#101820',
+    fontSize: 14,
+    color: colors.text,
   },
 
   forgotLink: {
-    fontSize: 11,
+    fontSize: 12,
     color: '#9A9A9A',
     textDecorationLine: 'underline',
     marginTop: -8,
@@ -76,41 +78,40 @@ export const styles = StyleSheet.create({
 
   loginButton: {
     marginTop: 42,
-    backgroundColor: '#213D4C',
+    backgroundColor: colors.primary,
     borderRadius: 13,
-    width: 80,
-    height: 35,
+    width: 88,
+    height: 38,
     alignItems: 'center',
     justifyContent: 'center',
   },
 
   loginButtonText: {
-    color: '#FFFFFF',
-    fontSize: 13,
+    color: colors.white,
+    fontSize: 14,
     fontWeight: '700',
   },
 
-  // HEADER LAUDOS
-
+  // HEADER PADRÃO
   medicoHeader: {
-    height: 132,
+    height: HEADER_HEIGHT,
     backgroundColor: colors.primary,
-    
-    paddingHorizontal: 7,
-    
+    paddingHorizontal: 12,
+    borderBottomRightRadius: 3,
+    borderBottomLeftRadius: 3,
   },
 
   whiteLogo: {
-    width: 52,
-    height: 52,
+    width: 58,
+    height: 58,
     resizeMode: 'contain',
     alignSelf: 'center',
-    marginTop: 12,
+    marginTop: 14,
   },
 
   screenTitle: {
     color: colors.white,
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: '800',
     marginTop: 10,
   },
@@ -118,320 +119,304 @@ export const styles = StyleSheet.create({
   searchRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 6,
-    marginTop: 7,
+    gap: 8,
+    marginTop: 8,
   },
 
   searchBox: {
     flex: 1,
-    height: 22,
+    height: 28,
     backgroundColor: colors.white,
-    borderRadius: 5,
+    borderRadius: 6,
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 4,
+    paddingHorizontal: 6,
   },
 
   searchInput: {
     flex: 1,
     paddingVertical: 0,
-    fontSize: 10,
+    fontSize: 12,
     height: '100%',
     color: colors.text,
   },
 
   filterBtn: {
-    width: 18,
-    height: 22,
+    width: 26,
+    height: 28,
     alignItems: 'center',
     justifyContent: 'center',
   },
 
   // NOTIFICAÇÕES
+  notificacaoHeader: {
+    height: HEADER_HEIGHT,
+    backgroundColor: colors.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderBottomRightRadius: 3,
+    borderBottomLeftRadius: 3,
+  },
 
-notificacaoHeader: {
-  height: 150,
-  backgroundColor: colors.primary,
-  alignItems: 'center',
-  justifyContent: 'center',
-  borderBottomRightRadius: 3,
-  borderBottomLeftRadius: 3,
-},
+  notificacaoLogo: {
+    width: 58,
+    height: 58,
+    resizeMode: 'contain',
+  },
 
-notificacaoLogo: {
-  width: 58,
-  height: 58,
-  resizeMode: 'contain',
-},
-
-notificacaoContent: {
-  flex: 1,
-  paddingTop: 22,
-  paddingHorizontal: 16,
-  paddingBottom: 70,
-  backgroundColor: colors.bg,
-},
-
-notificacaoItem: {
-  minHeight: 62,
-  flexDirection: 'row',
-  alignItems: 'flex-start',
-  borderBottomWidth: 1,
-  borderBottomColor: '#D9D9D9',
-  paddingBottom: 8,
-  marginBottom: 8,
-},
-
-notificacaoIconLogo: {
-  width: 34,
-  height: 34,
-  resizeMode: 'contain',
-  marginRight: 8,
-  marginTop: 0,
-},
-
-notificacaoTextArea: {
-  flex: 1,
-},
-
-notificacaoTitle: {
-  fontSize: 13,
-  fontWeight: '800',
-  color: colors.text,
-  marginBottom: 4,
-},
-
-notificacaoPatientRow: {
-  flexDirection: 'row',
-  alignItems: 'center',
-  gap: 4,
-},
-
-notificacaoPatient: {
-  fontSize: 10,
-  color: colors.text,
-  textTransform: 'uppercase',
-},
-
-notificacaoTime: {
-  position: 'absolute',
-  right: 0,
-  bottom: 7,
-  fontSize: 9,
-  color: '#8E8E8E',
-},
-
-  // CONFIG
-
- configProfileHeader: {
-  height: 150,
-  backgroundColor: colors.primary,
-  alignItems: 'center',
-  justifyContent: 'center',
-  borderBottomRightRadius: 3,
-  borderBottomLeftRadius: 3,
-},
-
-configProfileName: {
-  color: '#EAEAEA',
-  fontSize: 16,
-  marginTop: 8,
-},
-
-configMenu: {
-  flex: 1,
-  paddingTop: 22,
-  paddingHorizontal: 14,
-  backgroundColor: colors.bg,
-},
-
-configMenuItem: {
-  flexDirection: 'row',
-  alignItems: 'center',
-  marginBottom: 28,
-},
-
-configMenuText: {
-  fontSize: 17,
-  color: '#2A2A2A',
-  marginLeft: 10,
-},
-
-logoutButton: {
-  marginTop: 28,
-  alignSelf: 'center',
-  width: 65,
-  height: 36,
-  borderRadius: 12,
-  backgroundColor: '#E00000',
-  alignItems: 'center',
-  justifyContent: 'center',
-  shadowColor: '#000',
-  shadowOpacity: 0.25,
-  shadowRadius: 4,
-  shadowOffset: { width: 0, height: 3 },
-  elevation: 5,
-},
-
-logoutButtonText: {
-  color: '#FFFFFF',
-  fontSize: 13,
-  fontWeight: '800',
-},
-  // PERFIL
-
-  profileEditHeader: {
-  height: 197,
-  backgroundColor: colors.primary,
-  alignItems: 'center',
-  justifyContent: 'center',
-  borderBottomLeftRadius: 3,
-  borderBottomRightRadius: 3,
-},
-
-profilePhotoText: {
-  color: '#DADADA',
-  fontSize: 16,
-  marginTop: 8,
-},
-
-profileForm: {
-  flex: 1,
-  paddingTop: 22,
-  paddingHorizontal: 12,
-  backgroundColor: colors.bg,
-},
-
-profileLabel: {
-  fontSize: 16,
-  color: colors.text,
-  marginBottom: 7,
-},
-
-profileInput: {
-  height: 35,
-  borderWidth: 1,
-  borderColor: '#BFBFBF',
-  borderRadius: 4,
-  backgroundColor: '#F7F7F7',
-  marginBottom: 15,
-  paddingHorizontal: 8,
-  fontSize: 13,
-  color: colors.text,
-},
-
-profileButton: {
-  alignSelf: 'center',
-  marginTop: 44,
-  height: 36,
-  paddingHorizontal: 15,
-  borderRadius: 10,
-  backgroundColor: colors.primary,
-  alignItems: 'center',
-  justifyContent: 'center',
-  shadowColor: '#000',
-  shadowOpacity: 0.25,
-  shadowRadius: 4,
-  shadowOffset: { width: 0, height: 3 },
-  elevation: 5,
-},
-
-profileButtonText: {
-  color: '#FFFFFF',
-  fontSize: 13,
-  fontWeight: '700',
-},
-
-  // LAUDOS
-
-  contentFlat: {
+  notificacaoContent: {
     flex: 1,
-    paddingHorizontal: 4,
-    paddingTop: 9,
-    paddingBottom: 70,
+    paddingTop: 22,
+    paddingHorizontal: 16,
+    paddingBottom: NAV_HEIGHT + 20,
     backgroundColor: colors.bg,
   },
 
-  tabsWrap: {
-    height: 29,
-    backgroundColor: '#DFDFDF',
-    borderRadius: 4,
+  notificacaoItem: {
+    minHeight: 68,
     flexDirection: 'row',
-    padding: 1,
-    marginBottom: 7,
+    alignItems: 'flex-start',
+    borderBottomWidth: 1,
+    borderBottomColor: '#D9D9D9',
+    paddingBottom: 10,
+    marginBottom: 10,
   },
 
-  tabMed: {
+  notificacaoIconLogo: {
+    width: 36,
+    height: 36,
+    resizeMode: 'contain',
+    marginRight: 10,
+  },
+
+  notificacaoTextArea: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'relative',
   },
 
-  tabLabel: {
-    color: '#202020',
-    fontSize: 9,
-    fontWeight: '600',
-  },
-
-  tabUnderline: {
-    position: 'absolute',
-    bottom: 0,
-    width: '75%',
-    height: 2,
-    backgroundColor: colors.primary,
-  },
-
-  laudoCard: {
-    height: 58,
-    borderRadius: 6,
-    backgroundColor: colors.card,
-    borderWidth: 1,
-    borderColor: '#E0E0E0',
-    marginBottom: 5,
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 5,
-  },
-
-  statusIconBox: {
-    width: 25,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginRight: 4,
-  },
-
-  patientInfo: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-
-  patientName: {
-    fontSize: 8,
+  notificacaoTitle: {
+    fontSize: 14,
+    fontWeight: '800',
     color: colors.text,
+    marginBottom: 4,
+  },
+
+  notificacaoPatientRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+  },
+
+  notificacaoPatient: {
+    fontSize: 11,
+    color: colors.text,
+    textTransform: 'uppercase',
+  },
+
+  notificacaoTime: {
+    position: 'absolute',
+    right: 0,
+    bottom: 8,
+    fontSize: 10,
+    color: '#8E8E8E',
+  },
+
+  // CONFIG
+  configProfileHeader: {
+    height: HEADER_HEIGHT,
+    backgroundColor: colors.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderBottomRightRadius: 3,
+    borderBottomLeftRadius: 3,
+  },
+
+  configProfileName: {
+    color: '#EAEAEA',
+    fontSize: 16,
+    marginTop: 8,
+  },
+
+  configMenu: {
+    flex: 1,
+    paddingTop: 22,
+    paddingHorizontal: 14,
+    paddingBottom: NAV_HEIGHT + 20,
+    backgroundColor: colors.bg,
+  },
+
+  configMenuItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 30,
+    minHeight: 38,
+  },
+
+  configMenuText: {
+    fontSize: 18,
+    color: '#2A2A2A',
+    marginLeft: 12,
+  },
+
+  logoutButton: {
+    marginTop: 28,
+    alignSelf: 'center',
+    width: 72,
+    height: 38,
+    borderRadius: 12,
+    backgroundColor: '#E00000',
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 5,
+  },
+
+  logoutButtonText: {
+    color: colors.white,
+    fontSize: 13,
     fontWeight: '800',
   },
 
-  patientLine: {
-    fontSize: 7,
+  // PERFIL
+  profileEditHeader: {
+    height: HEADER_HEIGHT,
+    backgroundColor: colors.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderBottomLeftRadius: 3,
+    borderBottomRightRadius: 3,
+  },
+
+  profilePhotoText: {
+    color: '#DADADA',
+    fontSize: 16,
+    marginTop: 8,
+  },
+
+  profileForm: {
+    flex: 1,
+    paddingTop: 22,
+    paddingHorizontal: 14,
+    paddingBottom: NAV_HEIGHT + 20,
+    backgroundColor: colors.bg,
+  },
+
+  profileLabel: {
+    fontSize: 16,
     color: colors.text,
-    marginTop: 1,
+    marginBottom: 7,
   },
 
-  patientMuted: {
-    fontSize: 7,
-    color: '#565656',
-    marginTop: 1,
+  profileInput: {
+    height: 38,
+    borderWidth: 1,
+    borderColor: '#BFBFBF',
+    borderRadius: 4,
+    backgroundColor: '#F7F7F7',
+    marginBottom: 15,
+    paddingHorizontal: 8,
+    fontSize: 14,
+    color: colors.text,
   },
 
-  // NAVBAR
+  profileButton: {
+    alignSelf: 'center',
+    marginTop: 44,
+    height: 38,
+    paddingHorizontal: 18,
+    borderRadius: 10,
+    backgroundColor: colors.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 5,
+  },
 
+  profileButtonText: {
+    color: colors.white,
+    fontSize: 13,
+    fontWeight: '700',
+  },
+
+  // LAUDOS
+contentFlat: {
+  flex: 1,
+  paddingHorizontal: 12,
+  paddingTop: 16,
+  paddingBottom: NAV_HEIGHT + 24,
+  backgroundColor: colors.bg,
+},
+
+tabsWrap: {
+  height: 32,
+  backgroundColor: '#DFDFDF',
+  borderRadius: 4,
+  flexDirection: 'row',
+  marginBottom: 10,
+},
+
+tabMed: {
+  flex: 1,
+  alignItems: 'center',
+  justifyContent: 'center',
+  position: 'relative',
+},
+
+tabLabel: {
+  color: '#202020',
+  fontSize: 10,
+  fontWeight: '600',
+},
+
+tabUnderline: {
+  position: 'absolute',
+  bottom: 0,
+  width: '75%',
+  height: 2,
+  backgroundColor: colors.primary,
+},
+
+laudoCard: {
+  height: 78,
+  borderRadius: 8,
+  backgroundColor: colors.card,
+  borderWidth: 1,
+  borderColor: '#E0E0E0',
+  marginBottom: 10,
+  flexDirection: 'row',
+  alignItems: 'center',
+  paddingHorizontal: 10,
+},
+
+statusIconBox: {
+  width: 38,
+  alignItems: 'center',
+  justifyContent: 'center',
+  marginRight: 8,
+},
+
+patientName: {
+  fontSize: 12,
+  color: colors.text,
+  fontWeight: '800',
+},
+
+patientLine: {
+  fontSize: 10,
+  color: colors.text,
+  marginTop: 2,
+},
+
+patientMuted: {
+  fontSize: 10,
+  color: '#565656',
+  marginTop: 2,
+},
+
+  // NAVBAR MAIOR
   bottomNav: {
     position: 'absolute',
     left: 0,
     right: 0,
     bottom: 0,
-    height: 50,
+    height: NAV_HEIGHT,
     backgroundColor: colors.white,
     flexDirection: 'row',
     borderTopWidth: 1,
@@ -442,20 +427,22 @@ profileButtonText: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 2,
+    gap: 4,
   },
 
   bottomText: {
-    fontSize: 13,
+    fontSize: 14,
     color: '#1D1D1D',
+    fontWeight: '600',
   },
 
   // GERAIS
-
   page: {
+    flex: 1,
     padding: 18,
-    paddingBottom: 80,
+    paddingBottom: NAV_HEIGHT + 20,
     gap: 14,
+    backgroundColor: colors.bg,
   },
 
   card: {
@@ -492,233 +479,617 @@ profileButtonText: {
     color: colors.text,
   },
 
-editHeader: {
-  height: 118,
-  backgroundColor: colors.primary,
-  borderBottomLeftRadius: 3,
-  borderBottomRightRadius: 3,
-  flexDirection: 'row',
+  // TELAS INTERNAS
+  editHeader: {
+    height: HEADER_HEIGHT,
+    backgroundColor: colors.primary,
+    borderBottomLeftRadius: 3,
+    borderBottomRightRadius: 3,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 6,
+  },
+
+  editBack: {
+    position: 'absolute',
+    left: 14,
+    top: 58,
+  },
+
+  editHeaderTitle: {
+    color: colors.white,
+    fontSize: 22,
+    fontWeight: '800',
+  },
+
+  editContent: {
+    flex: 1,
+    paddingTop: 32,
+    paddingHorizontal: 28,
+    paddingBottom: NAV_HEIGHT + 20,
+    backgroundColor: colors.bg,
+  },
+
+  editInput: {
+    height: 38,
+    borderWidth: 1.8,
+    borderColor: colors.primary,
+    borderRadius: 8,
+    backgroundColor: colors.white,
+    paddingHorizontal: 8,
+    fontSize: 14,
+    color: colors.text,
+    marginBottom: 40,
+    elevation: 4,
+  },
+
+  editButton: {
+    alignSelf: 'center',
+    marginTop: 16,
+    height: 38,
+    paddingHorizontal: 18,
+    borderRadius: 10,
+    backgroundColor: colors.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 5,
+  },
+
+  editButtonText: {
+    color: colors.white,
+    fontSize: 13,
+    fontWeight: '700',
+  },
+
+  supportTextarea: {
+    height: 170,
+    borderWidth: 1.8,
+    borderColor: colors.primary,
+    borderRadius: 8,
+    backgroundColor: colors.white,
+    paddingHorizontal: 10,
+    paddingTop: 10,
+    fontSize: 14,
+    color: colors.text,
+    textAlignVertical: 'top',
+    marginBottom: 40,
+    elevation: 4,
+  },
+
+  horariosContent: {
+    flex: 1,
+    backgroundColor: colors.bg,
+    padding: 24,
+    paddingBottom: NAV_HEIGHT + 20,
+    gap: 20,
+  },
+
+  horarioCard: {
+    backgroundColor: colors.white,
+    borderRadius: 12,
+    padding: 20,
+    elevation: 4,
+  },
+
+  horarioTitle: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: colors.primary,
+    marginBottom: 12,
+  },
+
+  horarioText: {
+    fontSize: 15,
+    color: colors.text,
+    marginBottom: 6,
+  },
+
+  // FAVORITOS
+  favoriteHeader: {
+    height: HEADER_HEIGHT,
+    backgroundColor: colors.primary,
+    borderBottomLeftRadius: 3,
+    borderBottomRightRadius: 3,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 6,
+  },
+
+  favoriteHeaderTitle: {
+    color: colors.white,
+    fontSize: 22,
+    fontWeight: '800',
+  },
+
+  favoriteContent: {
+    flex: 1,
+    backgroundColor: colors.bg,
+    paddingHorizontal: 14,
+    paddingTop: 16,
+    paddingBottom: NAV_HEIGHT + 20,
+  },
+
+  favoriteSearchBox: {
+    height: 38,
+    borderWidth: 1.4,
+    borderColor: colors.primary,
+    borderRadius: 6,
+    backgroundColor: colors.white,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingLeft: 8,
+    paddingRight: 5,
+    marginBottom: 26,
+    elevation: 4,
+  },
+
+  favoriteSearchInput: {
+    flex: 1,
+    height: '100%',
+    paddingVertical: 0,
+    fontSize: 14,
+    color: colors.text,
+  },
+
+  favoriteList: {
+    gap: 8,
+  },
+
+  favoriteCard: {
+    height: 56,
+    backgroundColor: colors.white,
+    borderRadius: 7,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 8,
+  },
+
+  favoriteCardText: {
+    flex: 1,
+    marginLeft: 13,
+    fontSize: 14,
+    fontWeight: '700',
+    color: colors.text,
+  },
+
+  favoriteActions: {
+    flexDirection: 'row',
+    gap: 12,
+  },
+
+  favoriteAction: {
+    alignItems: 'center',
+  },
+
+  favoriteActionText: {
+    fontSize: 8,
+    color: '#333',
+    marginTop: -2,
+  },
+
+  favoriteAddButton: {
+    alignSelf: 'center',
+    marginTop: 60,
+    height: 38,
+    paddingHorizontal: 18,
+    borderRadius: 10,
+    backgroundColor: '#17B90C',
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 5,
+  },
+
+  favoriteAddButtonText: {
+    color: colors.white,
+    fontSize: 13,
+    fontWeight: '700',
+  },
+
+  // PACIENTE
+  patientHeader: {
+    height: HEADER_HEIGHT,
+    backgroundColor: colors.primary,
+    borderBottomLeftRadius: 7,
+    borderBottomRightRadius: 7,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 5,
+  },
+
+  patientHeaderTitle: {
+    color: colors.white,
+    fontSize: 22,
+    fontWeight: '800',
+  },
+
+  patientContent: {
+    flex: 1,
+    backgroundColor: colors.bg,
+    paddingHorizontal: 8,
+    paddingTop: 18,
+    paddingBottom: NAV_HEIGHT + 20,
+  },
+
+  patientTopCard: {
+    height: 54,
+    backgroundColor: colors.white,
+    borderRadius: 6,
+    borderWidth: 1,
+    borderColor: '#9E9E9E',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 8,
+    marginBottom: 20,
+    elevation: 4,
+  },
+
+  patientTopName: {
+    fontSize: 9,
+    fontWeight: '800',
+    color: colors.text,
+    marginBottom: 4,
+  },
+
+  patientTopInfoRow: {
+    flexDirection: 'row',
+    gap: 14,
+  },
+
+  patientTopInfo: {
+    fontSize: 8,
+    color: '#777',
+  },
+
+  patientDataCard: {
+    backgroundColor: colors.white,
+    borderRadius: 6,
+    borderWidth: 1,
+    borderColor: '#9E9E9E',
+    overflow: 'hidden',
+    elevation: 4,
+  },
+
+  patientDataRow: {
+    height: 32,
+    borderBottomWidth: 1,
+    borderBottomColor: '#BDBDBD',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 8,
+  },
+
+  patientDataRowLast: {
+    borderBottomWidth: 0,
+  },
+
+  patientDataLabel: {
+    fontSize: 9,
+    fontWeight: '800',
+    color: colors.text,
+  },
+
+  patientDataValue: {
+    fontSize: 9,
+    color: '#777',
+    textAlign: 'right',
+  },
+
+  patientButton: {
+    alignSelf: 'center',
+    marginTop: 43,
+    height: 32,
+    paddingHorizontal: 15,
+    borderRadius: 8,
+    backgroundColor: colors.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 5,
+  },
+
+  patientButtonText: {
+    color: colors.white,
+    fontSize: 11,
+    fontWeight: '700',
+  },
+
+  // AIH
+  aihHeader: {
+    height: HEADER_HEIGHT,
+    backgroundColor: colors.primary,
+    borderBottomLeftRadius: 8,
+    borderBottomRightRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  aihBack: {
+    position: 'absolute',
+    left: 12,
+    top: 58,
+  },
+
+  aihStar: {
+    position: 'absolute',
+    right: 16,
+    top: 58,
+  },
+
+  aihTabs: {
+    height: 34,
+    marginHorizontal: 8,
+    marginTop: 10,
+    backgroundColor: '#DFDFDF',
+    borderRadius: 5,
+    flexDirection: 'row',
+    elevation: 4,
+  },
+
+  aihTab: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+  },
+
+  aihTabText: {
+    fontSize: 11,
+    color: '#1A1A1A',
+    fontWeight: '700',
+  },
+
+  aihTabLine: {
+    position: 'absolute',
+    bottom: 0,
+    width: '75%',
+    height: 2,
+    backgroundColor: colors.primary,
+  },
+
+  aihContent: {
+    flex: 1,
+    paddingHorizontal: 8,
+    paddingTop: 19,
+    paddingBottom: NAV_HEIGHT + 20,
+    backgroundColor: colors.bg,
+  },
+
+  aihLabel: {
+    fontSize: 11,
+    color: '#111',
+    marginBottom: 5,
+  },
+
+  required: {
+    color: '#FF0000',
+  },
+
+  aihTextarea: {
+    height: 68,
+    backgroundColor: colors.white,
+    borderWidth: 1,
+    borderColor: '#222',
+    borderRadius: 8,
+    marginBottom: 19,
+    paddingHorizontal: 8,
+    paddingTop: 6,
+    textAlignVertical: 'top',
+    fontSize: 12,
+    color: colors.text,
+    elevation: 3,
+  },
+
+  aihSelect: {
+    width: 118,
+    height: 24,
+    borderWidth: 1,
+    borderColor: '#222',
+    borderRadius: 7,
+    backgroundColor: colors.white,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingLeft: 6,
+    marginBottom: 20,
+  },
+
+  aihSelectText: {
+    fontSize: 9,
+    color: '#8A8A8A',
+  },
+
+  aihSmallSearchRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 17,
+  },
+
+  aihSmallInput: {
+    width: 72,
+    height: 24,
+    borderWidth: 1,
+    borderColor: '#222',
+    borderRadius: 6,
+    backgroundColor: colors.white,
+    marginRight: 9,
+    paddingHorizontal: 5,
+  },
+
+  aihCodeRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 17,
+  },
+
+  aihCodeInput: {
+    width: 128,
+    height: 24,
+    borderWidth: 1,
+    borderColor: '#222',
+    borderRadius: 6,
+    backgroundColor: colors.white,
+    marginRight: 8,
+    paddingHorizontal: 5,
+  },
+
+  aihFullInput: {
+    height: 24,
+    borderWidth: 1,
+    borderColor: '#222',
+    borderRadius: 6,
+    backgroundColor: colors.white,
+    paddingHorizontal: 5,
+    marginBottom: 45,
+  },
+
+  aihButtonRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 23,
+  },
+
+  aihFavoriteButton: {
+    height: 32,
+    width: 78,
+    borderRadius: 8,
+    backgroundColor: '#EDEDED',
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 4,
+  },
+
+  aihFavoriteButtonText: {
+    fontSize: 10,
+    color: '#6E767C',
+  },
+
+  aihFinishButton: {
+    height: 32,
+    width: 78,
+    borderRadius: 8,
+    backgroundColor: colors.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 5,
+  },
+
+  aihFinishButtonText: {
+    fontSize: 10,
+    color: colors.white,
+  },
+
+  // ESQUECI SENHA
+  // ESQUECI SENHA
+resetPage: {
+  flex: 1,
+  backgroundColor: colors.bg,
+  paddingTop: 75,
   alignItems: 'center',
-  justifyContent: 'center',
-  shadowColor: '#000',
-  shadowOpacity: 0.25,
-  shadowRadius: 5,
-  shadowOffset: { width: 0, height: 4 },
-  elevation: 6,
 },
 
-editBack: {
+resetBack: {
   position: 'absolute',
-  left: 12,
-  top: 45,
+  left: 18,
+  top: 75,
 },
 
-editHeaderTitle: {
-  color: '#FFFFFF',
-  fontSize: 20,
+resetTitle: {
+  fontSize: 26,
   fontWeight: '800',
-},
-
-editContent: {
-  flex: 1,
-  paddingTop: 32,
-  paddingHorizontal: 38,
-  backgroundColor: colors.bg,
-},
-
-editInput: {
-  borderWidth: 1.8,
-  borderColor: colors.primary,
-  borderRadius: 8,
-  backgroundColor: '#FFFFFF',
-  paddingHorizontal: 6,
-  fontSize: 14,
   color: colors.text,
-  marginBottom: 40,
-  shadowColor: '#000',
-  shadowOpacity: 0.25,
-  shadowRadius: 3,
-  shadowOffset: { width: 0, height: 2 },
-  elevation: 4,
 },
 
-editButton: {
-  alignSelf: 'center',
-  marginTop: 16,
-  height: 34,
-  paddingHorizontal: 17,
-  borderRadius: 10,
-  backgroundColor: colors.primary,
-  alignItems: 'center',
-  justifyContent: 'center',
-  shadowColor: '#000',
-  shadowOpacity: 0.25,
-  shadowRadius: 4,
-  shadowOffset: { width: 0, height: 3 },
-  elevation: 5,
-},
-
-editButtonText: {
-  color: '#FFFFFF',
-  fontSize: 13,
-  fontWeight: '700',
-},
-supportTextarea: {
-  height: 170,
-  borderWidth: 1.8,
-  borderColor: colors.primary,
-  borderRadius: 8,
-  backgroundColor: '#FFFFFF',
-  paddingHorizontal: 10,
-  paddingTop: 10,
-  fontSize: 14,
-  color: colors.text,
-  textAlignVertical: 'top',
-  marginBottom: 40,
-  shadowColor: '#000',
-  shadowOpacity: 0.25,
-  shadowRadius: 3,
-  shadowOffset: { width: 0, height: 2 },
-  elevation: 4,
-},
-
-horariosContent: {
-  padding: 24,
-  gap: 20,
-},
-
-horarioCard: {
-  backgroundColor: '#FFFFFF',
-  borderRadius: 12,
-  padding: 20,
-  shadowColor: '#000',
-  shadowOpacity: 0.15,
-  shadowRadius: 4,
-  shadowOffset: { width: 0, height: 2 },
-  elevation: 4,
-},
-
-horarioTitle: {
-  fontSize: 18,
-  fontWeight: '700',
-  color: colors.primary,
-  marginBottom: 12,
-},
-
-horarioText: {
+resetInstruction: {
+  marginTop: 70,
+  marginBottom: 55,
   fontSize: 15,
-  color: colors.text,
-  marginBottom: 6,
-},
-favoriteHeader: {
-  height: 119,
-  backgroundColor: colors.primary,
-  borderBottomLeftRadius: 3,
-  borderBottomRightRadius: 3,
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'center',
-  shadowColor: '#000',
-  shadowOpacity: 0.25,
-  shadowRadius: 5,
-  shadowOffset: { width: 0, height: 4 },
-  elevation: 6,
-},
-
-favoriteHeaderTitle: {
-  color: '#FFFFFF',
-  fontSize: 20,
   fontWeight: '800',
+  color: colors.text,
+  textAlign: 'center',
+  paddingHorizontal: 28,
 },
 
-favoriteContent: {
-  flex: 1,
-  backgroundColor: colors.bg,
-  paddingHorizontal: 13,
-  paddingTop: 12,
-},
-
-favoriteSearchBox: {
-  height: 34,
-  borderWidth: 1.4,
+resetInput: {
+  width: 220,
+  height: 36,
+  borderWidth: 1.5,
   borderColor: colors.primary,
-  borderRadius: 6,
-  backgroundColor: '#FFFFFF',
-  flexDirection: 'row',
-  alignItems: 'center',
-  paddingLeft: 8,
-  paddingRight: 5,
-  marginBottom: 26,
-  shadowColor: '#000',
-  shadowOpacity: 0.25,
-  shadowRadius: 3,
-  shadowOffset: { width: 0, height: 2 },
-  elevation: 4,
-},
-
-favoriteSearchInput: {
-  flex: 1,
-  height: '100%',
+  borderRadius: 7,
+  backgroundColor: colors.white,
+  paddingHorizontal: 10,
   paddingVertical: 0,
   fontSize: 13,
   color: colors.text,
+  textAlign: 'center',
 },
 
-favoriteList: {
-  gap: 7,
-},
-
-favoriteCard: {
-  height: 51,
-  backgroundColor: '#FFFFFF',
-  borderRadius: 7,
-  flexDirection: 'row',
-  alignItems: 'center',
-  paddingHorizontal: 8,
-},
-
-favoriteCardText: {
-  flex: 1,
-  marginLeft: 13,
-  fontSize: 14,
-  fontWeight: '700',
-  color: colors.text,
-},
-
-favoriteActions: {
-  flexDirection: 'row',
-  gap: 12,
-},
-
-favoriteAction: {
-  alignItems: 'center',
-},
-
-favoriteActionText: {
-  fontSize: 8,
-  color: '#333',
-  marginTop: -2,
-},
-
-favoriteAddButton: {
-  alignSelf: 'center',
-  marginTop: 60,
-  height: 34,
-  paddingHorizontal: 17,
-  borderRadius: 10,
-  backgroundColor: '#17B90C',
+resetButton: {
+  marginTop: 42,
+  height: 36,
+  paddingHorizontal: 22,
+  borderRadius: 9,
+  backgroundColor: colors.primary,
   alignItems: 'center',
   justifyContent: 'center',
-  shadowColor: '#000',
-  shadowOpacity: 0.25,
-  shadowRadius: 4,
-  shadowOffset: { width: 0, height: 3 },
   elevation: 5,
 },
 
-favoriteAddButtonText: {
-  color: '#FFFFFF',
+resetButtonText: {
+  color: colors.white,
   fontSize: 13,
   fontWeight: '700',
+},
+
+resetOption: {
+  width: 230,
+  flexDirection: 'row',
+  alignItems: 'center',
+  marginBottom: 28,
+},
+
+resetOptionText: {
+  marginLeft: 10,
+  fontSize: 13,
+  color: colors.text,
+},
+
+resendButton: {
+  marginTop: 22,
+  width: 130,
+  height: 32,
+  borderWidth: 1.3,
+  borderColor: colors.primary,
+  borderRadius: 7,
+  alignItems: 'center',
+  justifyContent: 'center',
+  backgroundColor: colors.white,
+},
+
+resendButtonText: {
+  fontSize: 12,
+  color: colors.text,
+},
+
+resetSuccessPage: {
+  flex: 1,
+  backgroundColor: colors.bg,
+  alignItems: 'center',
+  paddingTop: 120,
+},
+
+resetLogo: {
+  width: 125,
+  height: 125,
+  resizeMode: 'contain',
+  marginBottom: 80,
+},
+
+resetSuccessText: {
+  fontSize: 15,
+  color: colors.text,
+  marginBottom: 28,
 },
 });

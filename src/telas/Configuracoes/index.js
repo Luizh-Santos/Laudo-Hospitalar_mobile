@@ -25,7 +25,7 @@ export default function Configuracoes({ nav }) {
 
         <TouchableOpacity
           style={styles.configMenuItem}
-          onPress={() => nav.go(routes.adicionarFavoritos)}
+          onPress={() => nav.go(routes.favoritosConfig)}
         >
           <Feather name="star" size={24} color="#222" />
           <Text style={styles.configMenuText}>Adicionar laudos Favoritos</Text>

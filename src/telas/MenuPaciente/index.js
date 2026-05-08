@@ -1,61 +1,89 @@
 import React from 'react';
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 import { styles } from '../../styles/index.js';
 import { routes } from '../../routes.js';
-import { HeaderLaudos, BottomNav, Card } from '../../components/index.js';
 
 export default function MenuPaciente({ nav }) {
   return (
     <View style={styles.flex}>
-      <HeaderLaudos />
+      <View style={styles.patientHeader}>
+        <TouchableOpacity onPress={() => nav.back()} style={styles.editBack}>
+          <Feather name="chevron-left" size={28} color="#FFFFFF" />
+        </TouchableOpacity>
 
-      <ScrollView contentContainerStyle={styles.page}>
-        <Card>
-          <Text style={styles.cardTitle}>JOAO MARCOS FRANCA</Text>
-          <Text style={styles.info}>Tipo: SUS</Text>
-          <Text style={styles.info}>Setor: ALA SUS: 53</Text>
-        </Card>
+        <Text style={styles.patientHeaderTitle}>Paciente</Text>
+      </View>
+
+      <View style={styles.patientContent}>
+        <View style={styles.patientTopCard}>
+          <Feather name="user" size={42} color="#5B5B5B" />
+
+          <View>
+            <Text style={styles.patientTopName}>
+              JOAO MARCOS DE FRANCA SANTOS
+            </Text>
+
+            <View style={styles.patientTopInfoRow}>
+              <Text style={styles.patientTopInfo}>MASCULINO</Text>
+              <Text style={styles.patientTopInfo}>22 ANOS</Text>
+              <Text style={styles.patientTopInfo}>SUS UNIFICADO</Text>
+            </View>
+          </View>
+        </View>
+
+        <View style={styles.patientDataCard}>
+          <View style={styles.patientDataRow}>
+            <Text style={styles.patientDataLabel}>Numero do atendimento</Text>
+            <Text style={styles.patientDataValue}>25500000235689</Text>
+          </View>
+
+          <View style={styles.patientDataRow}>
+            <Text style={styles.patientDataLabel}>Tipo</Text>
+            <Text style={styles.patientDataValue}>Internação</Text>
+          </View>
+
+          <View style={styles.patientDataRow}>
+            <Text style={styles.patientDataLabel}>Convênio</Text>
+            <Text style={styles.patientDataValue}>SUS</Text>
+          </View>
+
+          <View style={styles.patientDataRow}>
+            <Text style={styles.patientDataLabel}>Ala</Text>
+            <Text style={styles.patientDataValue}>Ala Sus Masculino</Text>
+          </View>
+
+          <View style={styles.patientDataRow}>
+            <Text style={styles.patientDataLabel}>Apartamento</Text>
+            <Text style={styles.patientDataValue}>Apart. 55</Text>
+          </View>
+
+          <View style={styles.patientDataRow}>
+            <Text style={styles.patientDataLabel}>Admissão</Text>
+            <Text style={styles.patientDataValue}>01/01/2025</Text>
+          </View>
+
+          <View style={styles.patientDataRow}>
+            <Text style={styles.patientDataLabel}>Alta</Text>
+            <Text style={styles.patientDataValue}>13/01/2025</Text>
+          </View>
+
+          <View style={[styles.patientDataRow, styles.patientDataRowLast]}>
+            <Text style={styles.patientDataLabel}>Médico Responsável</Text>
+            <Text style={styles.patientDataValue}>
+              Luis Alberto Andrade Bueno
+            </Text>
+          </View>
+        </View>
 
         <TouchableOpacity
-          style={styles.configItem}
+          style={styles.patientButton}
           onPress={() => nav.go(routes.preencherLaudos)}
         >
-          <Feather name="edit-3" size={22} color="#213D4C" />
-          <Text style={styles.configText}>Preencher laudo</Text>
-          <Feather name="chevron-right" size={22} color="#213D4C" />
+          <Text style={styles.patientButtonText}>PREENCHER AIH</Text>
         </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.configItem}
-          onPress={() => nav.go(routes.buscarCid)}
-        >
-          <Feather name="search" size={22} color="#213D4C" />
-          <Text style={styles.configText}>Buscar CID</Text>
-          <Feather name="chevron-right" size={22} color="#213D4C" />
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.configItem}
-          onPress={() => nav.go(routes.buscarProcedimentos)}
-        >
-          <Feather name="file-text" size={22} color="#213D4C" />
-          <Text style={styles.configText}>Buscar procedimentos</Text>
-          <Feather name="chevron-right" size={22} color="#213D4C" />
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.configItem}
-          onPress={() => nav.go(routes.adicionarFavoritos)}
-        >
-          <Feather name="star" size={22} color="#213D4C" />
-          <Text style={styles.configText}>Adicionar aos favoritos</Text>
-          <Feather name="chevron-right" size={22} color="#213D4C" />
-        </TouchableOpacity>
-      </ScrollView>
-
-      <BottomNav nav={nav} />
+      </View>
     </View>
   );
 }

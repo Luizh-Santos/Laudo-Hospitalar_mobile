@@ -23,6 +23,7 @@ import Perfil from './src/telas/Perfil/index.js';
 import Seguranca from './src/telas/Seguranca/index.js';
 import Suporte from './src/telas/Suporte/index.js';
 import Termos from './src/telas/Termos/index.js';
+import FavoritosConfig from './src/telas/AdicionarFavoritos/index.js';
 
 import AlterarEmail from './src/telas/AlterarEmail/index.js';
 import AlterarSenha from './src/telas/AlterarSenha/index.js';
@@ -58,6 +59,8 @@ export default function App() {
       [routes.suporte]: Suporte,
       [routes.termos]: Termos,
       [routes.adicionarFavoritos]: AdicionarFavoritos,
+      [routes.favoritosConfig]: FavoritosConfig,
+      
      
 
       [routes.alterarEmail]: AlterarEmail,

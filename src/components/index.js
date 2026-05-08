@@ -118,7 +118,7 @@ export function HeaderPerfil() {
 export function BottomNav({ nav }) {
   const items = [
     ['Laudos', 'file-text', routes.medicoLaudos],
-    ['Conversas', 'message-circle', routes.menuPaciente],
+    ['Conversas', 'message-circle'],
     ['Notificações', 'bell', routes.notificacoes],
     ['Configurações', 'settings', routes.configuracoes],
   ];
@@ -131,7 +131,7 @@ export function BottomNav({ nav }) {
           onPress={() => nav.go(route)}
           style={styles.bottomItem}
         >
-          <Feather name={icon} size={16} color="#111" />
+          <Feather name={icon} size={22} color="#111" />
           <Text style={styles.bottomText}>{label}</Text>
         </Pressable>
       ))}
