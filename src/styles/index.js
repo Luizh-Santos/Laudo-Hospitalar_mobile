@@ -120,7 +120,8 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
-    marginTop: 8,
+    marginTop: 5,
+   
   },
 
   searchBox: {
@@ -245,11 +246,21 @@ export const styles = StyleSheet.create({
   },
 
   configMenuItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 30,
-    minHeight: 38,
-  },
+  flexDirection: 'row',
+  alignItems: 'center',
+  marginBottom: 18,
+  borderWidth: 1.2,
+  borderColor: '#CFCFCF',
+  borderRadius: 12,
+  backgroundColor: '#FFFFFF',
+  paddingVertical: 14,
+  paddingHorizontal: 12,
+  shadowColor: '#000',
+  shadowOpacity: 0.08,
+  shadowRadius: 3,
+  shadowOffset: { width: 0, height: 2 },
+  elevation: 2,
+},
 
   configMenuText: {
     fontSize: 18,
@@ -306,7 +317,7 @@ export const styles = StyleSheet.create({
   },
 
   profileInput: {
-    height: 38,
+    height: 42,
     borderWidth: 1,
     borderColor: '#BFBFBF',
     borderRadius: 4,
@@ -345,7 +356,7 @@ contentFlat: {
 },
 
 tabsWrap: {
-  height: 32,
+  height: 40,
   backgroundColor: '#DFDFDF',
   borderRadius: 4,
   flexDirection: 'row',
@@ -361,8 +372,8 @@ tabMed: {
 
 tabLabel: {
   color: '#202020',
-  fontSize: 10,
-  fontWeight: '600',
+  fontSize: 13,
+  fontWeight: '700',
 },
 
 tabUnderline: {
@@ -512,21 +523,24 @@ patientMuted: {
   },
 
   editInput: {
-    height: 38,
+    height: 42,
     borderWidth: 1.8,
     borderColor: colors.primary,
     borderRadius: 8,
     backgroundColor: colors.white,
-    paddingHorizontal: 8,
+    // paddingHorizontal: 8,
     fontSize: 14,
     color: colors.text,
     marginBottom: 40,
     elevation: 4,
+   
+
   },
+
 
   editButton: {
     alignSelf: 'center',
-    marginTop: 16,
+    marginTop: 20,
     height: 38,
     paddingHorizontal: 18,
     borderRadius: 10,
@@ -555,7 +569,10 @@ patientMuted: {
     textAlignVertical: 'top',
     marginBottom: 40,
     elevation: 4,
+    borderRadius: 8,
+
   },
+  
 
   horariosContent: {
     flex: 1,

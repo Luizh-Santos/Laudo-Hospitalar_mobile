@@ -17,18 +17,24 @@ export default function AlterarEmail({ nav }) {
 
       <View style={styles.editContent}>
         <TextInput
+          autoCorrect={false}
+          autoCapitalize="none"
           placeholder="Senha"
           placeholderTextColor="#777"
           style={styles.editInput}
         />
 
         <TextInput
+          autoCorrect={false}
+          autoCapitalize="none"
           placeholder="Nova Senha"
           placeholderTextColor="#777"
           style={styles.editInput}
         />
 
         <TextInput
+          autoCorrect={false}
+          autoCapitalize="none"
           placeholder="Confirmar Nova Senha"
           placeholderTextColor="#777"
           style={styles.editInput}

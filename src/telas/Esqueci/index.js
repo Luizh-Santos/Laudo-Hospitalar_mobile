@@ -48,6 +48,8 @@ export default function Esqueci({ nav, step = 1 }) {
           </Text>
 
           <TextInput
+            autoCorrect={false}
+            autoCapitalize="none"
             placeholder="CPF"
             placeholderTextColor="#9A9A9A"
             style={styles.resetInput}
@@ -94,6 +96,8 @@ export default function Esqueci({ nav, step = 1 }) {
           </Text>
 
           <TextInput
+            autoCorrect={false}
+            autoCapitalize="none"
             placeholder="Insira o Código"
             placeholderTextColor="#9A9A9A"
             style={styles.resetInput}
@@ -116,6 +120,8 @@ export default function Esqueci({ nav, step = 1 }) {
           </Text>
 
           <TextInput
+            autoCorrect={false}
+            autoCapitalize="none"
             placeholder="Nova Senha"
             placeholderTextColor="#9A9A9A"
             secureTextEntry
@@ -123,6 +129,8 @@ export default function Esqueci({ nav, step = 1 }) {
           />
 
           <TextInput
+            autoCorrect={false}
+            autoCapitalize="none"
             placeholder="Confirmar Senha"
             placeholderTextColor="#9A9A9A"
             secureTextEntry

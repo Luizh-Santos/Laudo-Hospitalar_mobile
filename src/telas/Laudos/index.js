@@ -46,7 +46,9 @@ export default function Laudos({ nav }) {
                   color={colors.danger}
                 />
               ) : (
-                <Ionicons name="checkmark-circle" size={26} color={colors.success} />
+                <Ionicons name="checkmark-circle-outline" 
+                size={26} 
+                color= {colors.success} />
               )}
             </View>
 

@@ -19,6 +19,8 @@ export default function Suporte({ nav }) {
           style={styles.configMenuItem}
           onPress={() => nav.go(routes.faleConosco)}
         >
+
+
           <Feather name="message-circle" size={24} color="#222" />
           <Text style={styles.configMenuText}>Fale Conosco</Text>
         </TouchableOpacity>

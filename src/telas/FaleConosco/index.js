@@ -29,12 +29,16 @@ export default function FaleConosco({ nav }) {
 
       <ScrollView contentContainerStyle={styles.editContent}>
         <TextInput
+          autoCorrect={false}
+          autoCapitalize="none"
           placeholder="Assunto"
           placeholderTextColor="#777"
           style={styles.editInput}
         />
 
         <TextInput
+          autoCorrect={false}
+          autoCapitalize="none"
           placeholder="Digite sua mensagem"
           placeholderTextColor="#777"
           multiline

@@ -114,30 +114,54 @@ export function HeaderPerfil() {
     </View>
   );
 }
-
 export function BottomNav({ nav }) {
   const items = [
-    ['Laudos', 'file-text', routes.medicoLaudos],
-    ['Conversas', 'message-circle'],
-    ['Notificações', 'bell', routes.notificacoes],
-    ['Configurações', 'settings', routes.configuracoes],
+    {
+      label: 'Laudos',
+      icon: 'file-text',
+      route: routes.medicoLaudos,
+    },
+    {
+      label: 'Conversas',
+      icon: 'message-circle',
+      route: routes.menuPaciente,
+    },
+    {
+      label: 'Notificações',
+      icon: 'bell',
+      route: routes.notificacoes,
+    },
+    {
+      label: 'Configurações',
+      icon: 'settings',
+      route: routes.configuracoes,
+    },
   ];
 
   return (
     <View style={styles.bottomNav}>
-      {items.map(([label, icon, route]) => (
+      {items.map((item) => (
         <Pressable
-          key={route}
-          onPress={() => nav.go(route)}
+          key={item.route}
           style={styles.bottomItem}
+          onPress={() => nav.reset(item.route)}
         >
-          <Feather name={icon} size={22} color="#111" />
-          <Text style={styles.bottomText}>{label}</Text>
+          <Feather
+            name={item.icon}
+            size={22}
+            color="#111"
+          />
+
+          <Text style={styles.bottomText}>
+            {item.label}
+          </Text>
         </Pressable>
       ))}
     </View>
   );
 }
+
+
 
 export function MedInput({
   icon = 'user',

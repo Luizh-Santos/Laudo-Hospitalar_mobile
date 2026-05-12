@@ -45,22 +45,30 @@ export default function PreencherLaudos({ nav }) {
                     <Text style={styles.aihLabel}>
                         Principais sinais e sintomas clínicos <Text style={styles.required}>*</Text>
                     </Text>
-                    <TextInput multiline style={styles.aihTextarea} />
+                    <TextInput autoCorrect={false}
+                        autoCapitalize="none"
+                        multiline style={styles.aihTextarea} />
 
                     <Text style={styles.aihLabel}>
                         Condições que justificam a internação <Text style={styles.required}>*</Text>
                     </Text>
-                    <TextInput multiline style={styles.aihTextarea} />
+                    <TextInput autoCorrect={false}
+                        autoCapitalize="none"
+                        multiline style={styles.aihTextarea} />
 
                     <Text style={styles.aihLabel}>
                         Principais resultados de provas diagnósticas <Text style={styles.required}>*</Text>
                     </Text>
-                    <TextInput multiline style={styles.aihTextarea} />
+                    <TextInput autoCorrect={false}
+                        autoCapitalize="none"
+                        multiline style={styles.aihTextarea} />
 
                     <Text style={styles.aihLabel}>
                         Recursos necessários ao atendimento do paciente <Text style={styles.required}>*</Text>
                     </Text>
-                    <TextInput multiline style={styles.aihTextarea} />
+                    <TextInput autoCorrect={false}
+                        autoCapitalize="none"
+                        multiline style={styles.aihTextarea} />
                 </View>
             ) : (
                 <View style={styles.aihContent}>
@@ -87,23 +95,29 @@ export default function PreencherLaudos({ nav }) {
                     </Text>
 
                     <View style={styles.aihSmallSearchRow}>
-                        <TextInput style={styles.aihSmallInput} />
+                        <TextInput autoCorrect={false}
+                            autoCapitalize="none"
+                            style={styles.aihSmallInput} />
                         <Feather name="search" size={26} color="#222" />
                     </View>
 
                     <Text style={styles.aihLabel}>Código</Text>
 
                     <View style={styles.aihCodeRow}>
-                        <TextInput style={styles.aihCodeInput} />
+                        <TextInput autoCorrect={false}
+                            autoCapitalize="none"
+                            style={styles.aihCodeInput} />
                         <Feather name="search" size={24} color="#222" />
                     </View>
 
                     <Text style={styles.aihLabel}>Descrição do Procedimento</Text>
-                    <TextInput style={styles.aihFullInput} />
+                    <TextInput autoCorrect={false}
+                        autoCapitalize="none"
+                        style={styles.aihFullInput} />
 
                     <View style={styles.aihButtonRow}>
-                        <TouchableOpacity style={styles.aihFavoriteButton} 
-                        onPress={() => nav.go(routes.adicionarFavoritos)}
+                        <TouchableOpacity style={styles.aihFavoriteButton}
+                            onPress={() => nav.go(routes.adicionarFavoritos)}
                         >
                             <Text style={styles.aihFavoriteButtonText}>FAVORITAR</Text>
                         </TouchableOpacity>

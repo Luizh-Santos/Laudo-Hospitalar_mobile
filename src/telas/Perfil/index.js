@@ -19,16 +19,24 @@ export default function Perfil({ nav }) {
 
       <View style={styles.profileForm}>
         <Text style={styles.profileLabel}>Nome</Text>
-        <TextInput style={styles.profileInput} />
+        <TextInput autoCorrect={false}
+          autoCapitalize="none"
+          style={styles.profileInput} />
 
         <Text style={styles.profileLabel}>CRM</Text>
-        <TextInput style={styles.profileInput} />
+        <TextInput autoCorrect={false}
+          autoCapitalize="none"
+          style={styles.profileInput} />
 
         <Text style={styles.profileLabel}>Telefone</Text>
-        <TextInput style={styles.profileInput} />
+        <TextInput autoCorrect={false}
+          autoCapitalize="none"
+          style={styles.profileInput} />
 
         <Text style={styles.profileLabel}>Instituição</Text>
-        <TextInput style={styles.profileInput} />
+        <TextInput autoCorrect={false}
+          autoCapitalize="none"
+          style={styles.profileInput} />
 
         <TouchableOpacity style={styles.profileButton}>
           <Text style={styles.profileButtonText}>ATUALIZAR</Text>
