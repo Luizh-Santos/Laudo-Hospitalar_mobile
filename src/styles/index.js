@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 
 export const colors = {
   primary: '#213D4C',
@@ -12,34 +12,58 @@ export const colors = {
   white: '#FFFFFF',
 };
 
-const HEADER_HEIGHT = 150;
-const NAV_HEIGHT = 64;
+const { width, height } = Dimensions.get('window');
+const PHONE_MAX_WIDTH = 430;
+const BASE_WIDTH = 390;
+const BASE_HEIGHT = 844;
+const usableWidth = Math.min(width, PHONE_MAX_WIDTH);
+const widthRatio = usableWidth / BASE_WIDTH;
+const heightRatio = Math.min(height, BASE_HEIGHT) / BASE_HEIGHT;
+const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+const scale = (value, min = value * 0.86, max = value) =>
+  Math.round(clamp(value * widthRatio, min, max));
+const verticalScale = (value, min = value * 0.78, max = value) =>
+  Math.round(clamp(value * heightRatio, min, max));
+
+const HEADER_HEIGHT = verticalScale(150, 118, 150);
+const NAV_HEIGHT = verticalScale(64, 58, 66);
 
 export const styles = StyleSheet.create({
   app: {
     flex: 1,
     backgroundColor: colors.bg,
+    alignItems: 'center',
+  },
+
+  screenShell: {
+    flex: 1,
+    width: '100%',
+    maxWidth: PHONE_MAX_WIDTH,
+    alignSelf: 'center',
+    backgroundColor: colors.bg,
   },
 
   flex: {
     flex: 1,
+    width: '100%',
     backgroundColor: colors.bg,
   },
 
   // LOGIN
   loginPage: {
     flex: 1,
+    width: '100%',
     backgroundColor: colors.bg,
     alignItems: 'center',
-    paddingHorizontal: 34,
-    paddingTop: 95,
+    paddingHorizontal: scale(34, 22, 34),
+    paddingTop: verticalScale(95, 54, 95),
   },
 
   loginLogo: {
-    width: 132,
-    height: 132,
+    width: scale(132, 104, 132),
+    height: scale(132, 104, 132),
     resizeMode: 'contain',
-    marginBottom: 90,
+    marginBottom: verticalScale(90, 42, 90),
   },
 
   loginForm: {
@@ -96,17 +120,17 @@ export const styles = StyleSheet.create({
   medicoHeader: {
     height: HEADER_HEIGHT,
     backgroundColor: colors.primary,
-    paddingHorizontal: 12,
+    paddingHorizontal: scale(12, 10, 14),
     borderBottomRightRadius: 3,
     borderBottomLeftRadius: 3,
   },
 
   whiteLogo: {
-    width: 58,
-    height: 58,
+    width: scale(58, 50, 58),
+    height: scale(58, 50, 58),
     resizeMode: 'contain',
     alignSelf: 'center',
-    marginTop: 14,
+    marginTop: verticalScale(14, 10, 14),
   },
 
   screenTitle: {
@@ -160,15 +184,15 @@ export const styles = StyleSheet.create({
   },
 
   notificacaoLogo: {
-    width: 58,
-    height: 58,
+    width: scale(58, 50, 58),
+    height: scale(58, 50, 58),
     resizeMode: 'contain',
   },
 
   notificacaoContent: {
     flex: 1,
-    paddingTop: 22,
-    paddingHorizontal: 16,
+    paddingTop: verticalScale(22, 14, 22),
+    paddingHorizontal: scale(16, 12, 16),
     paddingBottom: NAV_HEIGHT + 20,
     backgroundColor: colors.bg,
   },
@@ -239,8 +263,8 @@ export const styles = StyleSheet.create({
 
   configMenu: {
     flex: 1,
-    paddingTop: 22,
-    paddingHorizontal: 14,
+    paddingTop: verticalScale(22, 14, 22),
+    paddingHorizontal: scale(14, 12, 16),
     paddingBottom: NAV_HEIGHT + 20,
     backgroundColor: colors.bg,
   },
@@ -248,13 +272,13 @@ export const styles = StyleSheet.create({
   configMenuItem: {
   flexDirection: 'row',
   alignItems: 'center',
-  marginBottom: 18,
+  marginBottom: verticalScale(18, 12, 18),
   borderWidth: 1.2,
   borderColor: '#CFCFCF',
   borderRadius: 12,
   backgroundColor: '#FFFFFF',
-  paddingVertical: 14,
-  paddingHorizontal: 12,
+  paddingVertical: verticalScale(14, 10, 14),
+  paddingHorizontal: scale(12, 10, 14),
   shadowColor: '#000',
   shadowOpacity: 0.08,
   shadowRadius: 3,
@@ -304,8 +328,8 @@ export const styles = StyleSheet.create({
 
   profileForm: {
     flex: 1,
-    paddingTop: 22,
-    paddingHorizontal: 14,
+    paddingTop: verticalScale(22, 14, 22),
+    paddingHorizontal: scale(14, 12, 16),
     paddingBottom: NAV_HEIGHT + 20,
     backgroundColor: colors.bg,
   },
@@ -349,8 +373,8 @@ export const styles = StyleSheet.create({
   // LAUDOS
 contentFlat: {
   flex: 1,
-  paddingHorizontal: 12,
-  paddingTop: 16,
+  paddingHorizontal: scale(12, 10, 14),
+  paddingTop: verticalScale(16, 10, 16),
   paddingBottom: NAV_HEIGHT + 24,
   backgroundColor: colors.bg,
 },
@@ -374,6 +398,13 @@ tabLabel: {
   color: '#202020',
   fontSize: 13,
   fontWeight: '700',
+},
+
+tabLabelRow: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: 4,
 },
 
 tabUnderline: {
@@ -442,7 +473,7 @@ patientMuted: {
   },
 
   bottomText: {
-    fontSize: 14,
+    fontSize: scale(14, 11, 14),
     color: '#1D1D1D',
     fontWeight: '600',
   },
@@ -450,7 +481,7 @@ patientMuted: {
   // GERAIS
   page: {
     flex: 1,
-    padding: 18,
+    padding: scale(18, 14, 18),
     paddingBottom: NAV_HEIGHT + 20,
     gap: 14,
     backgroundColor: colors.bg,
@@ -504,8 +535,8 @@ patientMuted: {
 
   editBack: {
     position: 'absolute',
-    left: 14,
-    top: 58,
+    left: scale(14, 12, 16),
+    top: Math.round(HEADER_HEIGHT * 0.38),
   },
 
   editHeaderTitle: {
@@ -516,8 +547,8 @@ patientMuted: {
 
   editContent: {
     flex: 1,
-    paddingTop: 32,
-    paddingHorizontal: 28,
+    paddingTop: verticalScale(32, 18, 32),
+    paddingHorizontal: scale(28, 16, 28),
     paddingBottom: NAV_HEIGHT + 20,
     backgroundColor: colors.bg,
   },
@@ -577,7 +608,7 @@ patientMuted: {
   horariosContent: {
     flex: 1,
     backgroundColor: colors.bg,
-    padding: 24,
+    padding: scale(24, 16, 24),
     paddingBottom: NAV_HEIGHT + 20,
     gap: 20,
   },
@@ -623,8 +654,8 @@ patientMuted: {
   favoriteContent: {
     flex: 1,
     backgroundColor: colors.bg,
-    paddingHorizontal: 14,
-    paddingTop: 16,
+    paddingHorizontal: scale(14, 12, 16),
+    paddingTop: verticalScale(16, 10, 16),
     paddingBottom: NAV_HEIGHT + 20,
   },
 
@@ -725,8 +756,8 @@ patientMuted: {
   patientContent: {
     flex: 1,
     backgroundColor: colors.bg,
-    paddingHorizontal: 8,
-    paddingTop: 18,
+    paddingHorizontal: scale(8, 8, 12),
+    paddingTop: verticalScale(18, 12, 18),
     paddingBottom: NAV_HEIGHT + 20,
   },
 
@@ -825,14 +856,14 @@ patientMuted: {
 
   aihBack: {
     position: 'absolute',
-    left: 12,
-    top: 58,
+    left: scale(12, 10, 14),
+    top: Math.round(HEADER_HEIGHT * 0.38),
   },
 
   aihStar: {
     position: 'absolute',
-    right: 16,
-    top: 58,
+    right: scale(16, 12, 18),
+    top: Math.round(HEADER_HEIGHT * 0.38),
   },
 
   aihTabs: {
@@ -868,8 +899,8 @@ patientMuted: {
 
   aihContent: {
     flex: 1,
-    paddingHorizontal: 8,
-    paddingTop: 19,
+    paddingHorizontal: scale(8, 8, 12),
+    paddingTop: verticalScale(19, 12, 19),
     paddingBottom: NAV_HEIGHT + 20,
     backgroundColor: colors.bg,
   },
@@ -900,8 +931,8 @@ patientMuted: {
   },
 
   aihSelect: {
-    width: 118,
-    height: 24,
+    width: 190,
+    minHeight: 32,
     borderWidth: 1,
     borderColor: '#222',
     borderRadius: 7,
@@ -909,13 +940,47 @@ patientMuted: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingLeft: 6,
-    marginBottom: 20,
+    paddingLeft: 8,
+    paddingRight: 4,
+    marginBottom: 10,
   },
 
   aihSelectText: {
-    fontSize: 9,
+    flex: 1,
+    fontSize: 11,
     color: '#8A8A8A',
+  },
+
+  aihSelectOptions: {
+    width: 190,
+    borderWidth: 1,
+    borderColor: '#D4D4D4',
+    borderRadius: 8,
+    backgroundColor: colors.white,
+    marginTop: -4,
+    marginBottom: 16,
+    overflow: 'hidden',
+    elevation: 3,
+  },
+
+  aihSelectOption: {
+    minHeight: 34,
+    paddingHorizontal: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    borderBottomWidth: 1,
+    borderBottomColor: '#EFEFEF',
+  },
+
+  aihSelectOptionSelected: {
+    backgroundColor: '#EDF5F7',
+  },
+
+  aihSelectOptionText: {
+    flex: 1,
+    fontSize: 11,
+    color: colors.text,
   },
 
   aihSmallSearchRow: {
@@ -1002,15 +1067,16 @@ patientMuted: {
   // ESQUECI SENHA
 resetPage: {
   flex: 1,
+  width: '100%',
   backgroundColor: colors.bg,
-  paddingTop: 75,
+  paddingTop: verticalScale(75, 44, 75),
   alignItems: 'center',
 },
 
 resetBack: {
   position: 'absolute',
-  left: 18,
-  top: 75,
+  left: scale(18, 14, 18),
+  top: verticalScale(75, 44, 75),
 },
 
 resetTitle: {
@@ -1020,8 +1086,8 @@ resetTitle: {
 },
 
 resetInstruction: {
-  marginTop: 70,
-  marginBottom: 55,
+  marginTop: verticalScale(70, 36, 70),
+  marginBottom: verticalScale(55, 30, 55),
   fontSize: 15,
   fontWeight: '800',
   color: colors.text,
@@ -1092,21 +1158,279 @@ resendButtonText: {
 
 resetSuccessPage: {
   flex: 1,
+  width: '100%',
   backgroundColor: colors.bg,
   alignItems: 'center',
-  paddingTop: 120,
+  paddingTop: verticalScale(120, 70, 120),
 },
 
 resetLogo: {
-  width: 125,
-  height: 125,
+  width: scale(125, 102, 125),
+  height: scale(125, 102, 125),
   resizeMode: 'contain',
-  marginBottom: 80,
+  marginBottom: verticalScale(80, 42, 80),
 },
 
 resetSuccessText: {
   fontSize: 15,
   color: colors.text,
   marginBottom: 28,
+},
+mensagemPage: {
+  flex: 1,
+  backgroundColor: colors.bg,
+  padding: scale(16, 12, 16),
+  alignItems: 'center',
+  justifyContent: 'center',
+},
+
+mensagemCard: {
+  width: '100%',
+  minHeight: verticalScale(340, 250, 340),
+  backgroundColor: '#F8F8F8',
+  borderRadius: 18,
+  paddingVertical: verticalScale(42, 28, 42),
+  paddingHorizontal: scale(24, 18, 24),
+  alignItems: 'center',
+  justifyContent: 'center',
+  shadowColor: '#000',
+  shadowOpacity: 0.08,
+  shadowRadius: 20,
+  shadowOffset: { width: 0, height: 8 },
+  elevation: 4,
+},
+
+mensagemIcon: {
+  width: 68,
+  height: 68,
+  marginBottom: 24,
+  borderRadius: 34,
+  borderWidth: 2,
+  borderColor: '#314B5D',
+  alignItems: 'center',
+  justifyContent: 'center',
+},
+
+mensagemBadge: {
+  minWidth: 112,
+  height: 38,
+  marginBottom: 22,
+  borderRadius: 12,
+  backgroundColor: '#1F3C4D',
+  alignItems: 'center',
+  justifyContent: 'center',
+},
+
+mensagemBadgeText: {
+  color: '#FFFFFF',
+  fontSize: 14,
+  fontWeight: '600',
+},
+
+mensagemTitle: {
+  color: '#314B5D',
+  fontSize: 26,
+  fontWeight: '600',
+  marginBottom: 18,
+},
+
+mensagemText: {
+  maxWidth: 280,
+  color: '#3A3A3A',
+  fontSize: 14,
+  lineHeight: 25,
+  textAlign: 'center',
+},
+
+filterOverlay: {
+  flex: 1,
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: scale(16, 12, 18),
+},
+
+filterBackdrop: {
+  ...StyleSheet.absoluteFillObject,
+  backgroundColor: 'rgba(20, 26, 32, 0.28)',
+},
+
+filterModal: {
+  width: '100%',
+  maxWidth: 390,
+  maxHeight: '86%',
+  backgroundColor: '#F4F4F4',
+  borderWidth: 1,
+  borderColor: '#D8E0E5',
+  borderRadius: 18,
+  padding: scale(16, 14, 18),
+  elevation: 12,
+  shadowColor: '#000',
+  shadowOpacity: 0.16,
+  shadowRadius: 24,
+  shadowOffset: { width: 0, height: 12 },
+},
+
+filterHeader: {
+  minHeight: 42,
+  alignItems: 'center',
+  justifyContent: 'center',
+  marginBottom: 14,
+},
+
+filterTitle: {
+  fontSize: 24,
+  fontWeight: '800',
+  color: '#2F2F2F',
+  textTransform: 'uppercase',
+},
+
+filterClose: {
+  position: 'absolute',
+  right: 0,
+  width: 38,
+  height: 38,
+  borderRadius: 12,
+  backgroundColor: colors.white,
+  alignItems: 'center',
+  justifyContent: 'center',
+},
+
+filterScroll: {
+  maxHeight: 440,
+},
+
+filterContent: {
+  gap: 14,
+  paddingBottom: 4,
+},
+
+filterCard: {
+  backgroundColor: colors.white,
+  borderWidth: 1.4,
+  borderColor: '#496173',
+  borderRadius: 16,
+  padding: scale(14, 12, 16),
+},
+
+filterLabel: {
+  marginBottom: 12,
+  fontSize: 16,
+  fontWeight: '600',
+  color: '#353535',
+},
+
+filterSegment: {
+  flexDirection: 'row',
+  gap: 8,
+},
+
+filterSegmentItem: {
+  flex: 1,
+  minHeight: 42,
+  borderRadius: 12,
+  backgroundColor: '#EEF3F5',
+  alignItems: 'center',
+  justifyContent: 'center',
+  paddingHorizontal: 6,
+},
+
+filterSegmentItemActive: {
+  backgroundColor: colors.primary,
+},
+
+filterSegmentText: {
+  fontSize: 13,
+  fontWeight: '700',
+  color: colors.primary,
+  textAlign: 'center',
+},
+
+filterSegmentTextActive: {
+  color: colors.white,
+},
+
+filterSelect: {
+  minHeight: 46,
+  borderRadius: 14,
+  backgroundColor: '#F7F9FA',
+  paddingHorizontal: 14,
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  gap: 10,
+},
+
+filterSelectText: {
+  flex: 1,
+  fontSize: 14,
+  color: '#626A70',
+},
+
+filterDropdown: {
+  marginTop: 10,
+  maxHeight: 180,
+  borderWidth: 1,
+  borderColor: '#E3E9ED',
+  borderRadius: 14,
+  overflow: 'hidden',
+  backgroundColor: colors.white,
+},
+
+filterDropdownItem: {
+  minHeight: 42,
+  paddingHorizontal: 14,
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  gap: 10,
+  borderBottomWidth: 1,
+  borderBottomColor: '#F0F2F3',
+},
+
+filterDropdownItemSelected: {
+  backgroundColor: '#EDF5F7',
+},
+
+filterDropdownText: {
+  flex: 1,
+  fontSize: 13,
+  fontWeight: '600',
+  color: '#35444E',
+},
+
+filterActions: {
+  flexDirection: 'row',
+  justifyContent: 'center',
+  gap: 16,
+  marginTop: 18,
+},
+
+filterButton: {
+  minWidth: 110,
+  height: 40,
+  borderRadius: 14,
+  alignItems: 'center',
+  justifyContent: 'center',
+  paddingHorizontal: 16,
+},
+
+filterButtonSecondary: {
+  backgroundColor: '#DEDCDC',
+},
+
+filterButtonPrimary: {
+  backgroundColor: colors.primary,
+},
+
+filterButtonSecondaryText: {
+  color: colors.primary,
+  fontSize: 13,
+  fontWeight: '800',
+},
+
+filterButtonPrimaryText: {
+  color: colors.white,
+  fontSize: 13,
+  fontWeight: '800',
 },
 });

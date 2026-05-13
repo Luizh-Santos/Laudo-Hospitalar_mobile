@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { routes } from '../../routes.js';
@@ -6,6 +6,7 @@ import { routes } from '../../routes.js';
 import { styles } from '../../styles/index.js';
 
 export default function AdicionarFavoritos({ nav }) {
+  const searchInputRef = useRef(null);
   const laudos = ['PNEUMONIA', 'PNEUMONIA', 'PNEUMONIA', 'PNEUMONIA'];
 
   return (
@@ -28,8 +29,18 @@ export default function AdicionarFavoritos({ nav }) {
       </View>
 
       <View style={styles.favoriteContent}>
-        <View style={styles.favoriteSearchBox}>
-          <TextInput style={styles.favoriteSearchInput} />
+        <View
+          style={styles.favoriteSearchBox}
+          onTouchStart={() => searchInputRef.current?.focus()}
+        >
+          <TextInput
+            ref={searchInputRef}
+            placeholder="Pesquisar"
+            placeholderTextColor="#8A8A8A"
+            returnKeyType="search"
+            showSoftInputOnFocus
+            style={styles.favoriteSearchInput}
+          />
           <Feather name="search" size={28} color="#666" />
         </View>
 

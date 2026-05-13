@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
-import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 
 import { styles, colors } from '../../styles/index.js';
 import { routes } from '../../routes.js';
 import { HeaderLaudos, BottomNav } from '../../components/index.js';
+import ModalFiltro from '../Filtro/index.js';
 
 export default function Laudos({ nav }) {
   const [tab, setTab] = useState('pendentes');
+  const [filtroAberto, setFiltroAberto] = useState(false);
 
   const laudos = [
     { nome: 'JOAO MARCOS FRANCA', tipo: 'SUS', setor: 'ALA SUS: 53' },
@@ -17,7 +19,7 @@ export default function Laudos({ nav }) {
 
   return (
     <View style={styles.flex}>
-      <HeaderLaudos />
+      <HeaderLaudos onFilterPress={() => setFiltroAberto(true)} />
 
       <ScrollView style={styles.contentFlat}>
         <View style={styles.tabsWrap}>
@@ -27,7 +29,9 @@ export default function Laudos({ nav }) {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.tabMed} onPress={() => setTab('concluidos')}>
-            <Text style={styles.tabLabel}>Laudos Concluídos</Text>
+            <View style={styles.tabLabelRow}>
+              <Text style={styles.tabLabel}>Laudos Concluídos</Text>
+            </View>
             {tab === 'concluidos' && <View style={styles.tabUnderline} />}
           </TouchableOpacity>
         </View>
@@ -46,9 +50,11 @@ export default function Laudos({ nav }) {
                   color={colors.danger}
                 />
               ) : (
-                <Ionicons name="checkmark-circle-outline" 
-                size={26} 
-                color= {colors.success} />
+                <MaterialIcons
+                  name="verified"
+                  size={28}
+                  color={colors.success}
+                />
               )}
             </View>
 
@@ -62,6 +68,12 @@ export default function Laudos({ nav }) {
       </ScrollView>
 
       <BottomNav nav={nav} />
+
+      <ModalFiltro
+        visible={filtroAberto}
+        onClose={() => setFiltroAberto(false)}
+        onAplicar={() => setFiltroAberto(false)}
+      />
     </View>
   );
 }

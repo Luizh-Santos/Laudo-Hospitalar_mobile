@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {
   SafeAreaView,
   View,
@@ -61,7 +61,9 @@ export function MedLogo({ white = false, style }) {
   );
 }
 
-export function HeaderLaudos() {
+export function HeaderLaudos({ onFilterPress }) {
+  const searchInputRef = useRef(null);
+
   return (
     <View style={styles.medicoHeader}>
       <MedLogo white style={styles.whiteLogo} />
@@ -69,17 +71,23 @@ export function HeaderLaudos() {
       <Text style={styles.screenTitle}>Laudos</Text>
 
       <View style={styles.searchRow}>
-        <View style={styles.searchBox}>
+        <View
+          style={styles.searchBox}
+          onTouchStart={() => searchInputRef.current?.focus()}
+        >
           <Feather name="search" size={16} color="#6A6A6A" />
 
           <TextInput
+            ref={searchInputRef}
             placeholder="Pesquisar"
             placeholderTextColor="#9B9B9B"
+            returnKeyType="search"
+            showSoftInputOnFocus
             style={styles.searchInput}
           />
         </View>
 
-        <Pressable style={styles.filterBtn}>
+        <Pressable style={styles.filterBtn} onPress={onFilterPress}>
           <Feather name="filter" size={18} color={colors.white} />
         </Pressable>
       </View>
@@ -124,7 +132,7 @@ export function BottomNav({ nav }) {
     {
       label: 'Conversas',
       icon: 'message-circle',
-      route: routes.menuPaciente,
+      route: routes.conversas,
     },
     {
       label: 'Notificações',
@@ -234,6 +242,8 @@ export function Input({
       value={value}
       onChangeText={onChangeText}
       placeholderTextColor="#9aa5ab"
+      returnKeyType="search"
+      showSoftInputOnFocus
       style={[styles.input, multiline && styles.textarea]}
     />
   );

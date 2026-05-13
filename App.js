@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 import { styles } from './src/styles/index.js';
@@ -10,6 +10,7 @@ import Login from './src/telas/Login/index.js';
 import Esqueci from './src/telas/Esqueci/index.js';
 
 import Laudos from './src/telas/Laudos/index.js';
+import Conversas from './src/telas/Conversas/index.js';
 import Notificacoes from './src/telas/Notificacoes/index.js';
 import MenuPaciente from './src/telas/MenuPaciente/index.js';
 import PreencherLaudos from './src/telas/PreencherLaudos/index.js';
@@ -46,6 +47,7 @@ export default function App() {
       [routes.esqueci5]: (props) => <Esqueci {...props} step={5} />,
 
       [routes.medicoLaudos]: Laudos,
+      [routes.conversas]: Conversas,
       [routes.notificacoes]: Notificacoes,
       [routes.menuPaciente]: MenuPaciente,
       [routes.preencherLaudos]: PreencherLaudos,
@@ -61,7 +63,6 @@ export default function App() {
       [routes.adicionarFavoritos]: AdicionarFavoritos,
       [routes.favoritosConfig]: FavoritosConfig,
       
-     
 
       [routes.alterarEmail]: AlterarEmail,
       [routes.alterarSenha]: AlterarSenha,
@@ -77,7 +78,9 @@ export default function App() {
   return (
     <SafeAreaView style={styles.app}>
       <StatusBar style="dark" />
-      <Screen nav={nav} />
+      <View style={styles.screenShell}>
+        <Screen nav={nav} />
+      </View>
     </SafeAreaView>
   );
 }
