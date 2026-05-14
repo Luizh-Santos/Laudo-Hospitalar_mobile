@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 
-import { styles, colors } from '../../styles/index.js';
+import { colors } from '../../styles/index.js';
+import { styles } from './styles.js';
 import { routes } from '../../routes.js';
 import { HeaderLaudos, BottomNav } from '../../components/index.js';
 import ModalFiltro from '../Filtro/index.js';

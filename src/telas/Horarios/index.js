@@ -8,7 +8,7 @@ import {
 
 import { Feather } from '@expo/vector-icons';
 
-import { styles } from '../../styles/index.js';
+import { styles } from './styles.js';
 
 export default function Horarios({ nav }) {
   return (

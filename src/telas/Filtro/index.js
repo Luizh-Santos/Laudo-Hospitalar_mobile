@@ -2,7 +2,8 @@ import React, { useMemo, useState } from 'react';
 import { Modal, Pressable, ScrollView, Text, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
-import { styles, colors } from '../../styles/index.js';
+import { colors } from '../../styles/index.js';
+import { styles } from './styles.js';
 
 export default function ModalFiltro({ visible, onClose, onAplicar }) {
   const [tipoAtendimento, setTipoAtendimento] = useState('convenios');

@@ -3,7 +3,7 @@ import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { routes } from '../../routes.js';
 
-import { styles } from '../../styles/index.js';
+import { styles } from './styles.js';
 
 export default function PreencherLaudos({ nav }) {
     const cidInputRef = useRef(null);

@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
-import { styles } from '../../styles/index.js';
+import { styles } from './styles.js';
 import { routes } from '../../routes.js';
 
 export default function MenuPaciente({ nav }) {

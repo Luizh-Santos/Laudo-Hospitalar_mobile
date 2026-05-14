@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-import { styles } from '../../styles/index.js';
+import { styles } from './styles.js';
 import { HeaderNotificacoes, BottomNav } from '../../components/index.js';
 
 export default function Notificacoes({ nav }) {

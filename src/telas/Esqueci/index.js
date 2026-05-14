@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
-import { styles } from '../../styles/index.js';
+import { styles } from './styles.js';
 import { routes } from '../../routes.js';
 import { MedLogo } from '../../components/index.js';
 

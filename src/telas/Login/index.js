@@ -1,6 +1,6 @@
 import React from 'react';
 import { KeyboardAvoidingView, Platform, Pressable, Text, View } from 'react-native';
-import { styles } from '../../styles';
+import { styles } from './styles.js';
 import { routes } from '../../routes';
 import { MedLogo, MedInput } from '../../components';
 
