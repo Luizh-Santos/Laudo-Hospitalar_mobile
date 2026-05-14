@@ -166,7 +166,7 @@ export default function PreencherLaudos({ nav }) {
                         <Feather name="search" size={26} color="#222" />
                     </View>
 
-                    <Text style={styles.aihLabel}>Código</Text>
+                    <Text style={styles.aihLabel}>Código do Procedimento</Text>
 
                     <View
                         style={styles.aihCodeRow}
@@ -197,7 +197,7 @@ export default function PreencherLaudos({ nav }) {
                             style={styles.aihFinishButton}
                             onPress={() => nav.reset(routes.medicoLaudos)}
                         >
-                            <Text style={styles.aihFinishButtonText}>CONCLUIR</Text>
+                            <Text style={styles.aihFinishButtonText}>ENVIAR</Text>
                         </TouchableOpacity>
                     </View>
                 </View>

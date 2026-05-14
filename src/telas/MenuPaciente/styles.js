@@ -1,22 +1,9 @@
-import { Dimensions, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
+
+
+import { HEADER_HEIGHT, NAV_HEIGHT, verticalScale, scale } from '../../styles/metrics.js';
 
 import { colors } from '../../styles/index.js';
-
-const { width, height } = Dimensions.get('window');
-const PHONE_MAX_WIDTH = 430;
-const BASE_WIDTH = 390;
-const BASE_HEIGHT = 844;
-const usableWidth = Math.min(width, PHONE_MAX_WIDTH);
-const widthRatio = usableWidth / BASE_WIDTH;
-const heightRatio = Math.min(height, BASE_HEIGHT) / BASE_HEIGHT;
-const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-const scale = (value, min = value * 0.86, max = value) =>
-  Math.round(clamp(value * widthRatio, min, max));
-const verticalScale = (value, min = value * 0.78, max = value) =>
-  Math.round(clamp(value * heightRatio, min, max));
-
-const HEADER_HEIGHT = verticalScale(150, 118, 150);
-const NAV_HEIGHT = verticalScale(64, 58, 66);
 
 export const styles = StyleSheet.create({
   editBack: {
@@ -33,10 +20,10 @@ export const styles = StyleSheet.create({
 
   patientButton: {
     alignSelf: 'center',
-    marginTop: 43,
-    height: 32,
-    paddingHorizontal: 15,
-    borderRadius: 8,
+    marginTop: 54,
+    height: 40,
+    paddingHorizontal: 22,
+    borderRadius: 10,
     backgroundColor: colors.primary,
     alignItems: 'center',
     justifyContent: 'center',
@@ -45,15 +32,15 @@ export const styles = StyleSheet.create({
 
   patientButtonText: {
     color: colors.white,
-    fontSize: 11,
+    fontSize: 13,
     fontWeight: '700',
   },
 
   patientContent: {
     flex: 1,
     backgroundColor: colors.bg,
-    paddingHorizontal: scale(8, 8, 12),
-    paddingTop: verticalScale(18, 12, 18),
+    paddingHorizontal: scale(14, 12, 18),
+    paddingTop: verticalScale(26, 18, 28),
     paddingBottom: NAV_HEIGHT + 20,
   },
 
@@ -67,19 +54,19 @@ export const styles = StyleSheet.create({
   },
 
   patientDataLabel: {
-    fontSize: 9,
+    fontSize: 12,
     fontWeight: '800',
     color: colors.text,
   },
 
   patientDataRow: {
-    height: 32,
+    minHeight: 44,
     borderBottomWidth: 1,
     borderBottomColor: '#BDBDBD',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingHorizontal: 8,
+    paddingHorizontal: 12,
   },
 
   patientDataRowLast: {
@@ -87,7 +74,9 @@ export const styles = StyleSheet.create({
   },
 
   patientDataValue: {
-    fontSize: 9,
+    flex: 1,
+    marginLeft: 12,
+    fontSize: 12,
     color: '#777',
     textAlign: 'right',
   },
@@ -110,15 +99,15 @@ export const styles = StyleSheet.create({
   },
 
   patientTopCard: {
-    height: 54,
+    minHeight: 72,
     backgroundColor: colors.white,
     borderRadius: 6,
     borderWidth: 1,
     borderColor: '#9E9E9E',
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 8,
-    marginBottom: 20,
+    paddingHorizontal: 12,
+    marginBottom: 26,
     elevation: 4,
   },
 
@@ -133,7 +122,7 @@ export const styles = StyleSheet.create({
   },
 
   patientTopName: {
-    fontSize: 9,
+    fontSize: 16,
     fontWeight: '800',
     color: colors.text,
     marginBottom: 4,

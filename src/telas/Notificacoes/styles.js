@@ -1,22 +1,10 @@
-import { Dimensions, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
+
+
+import { NAV_HEIGHT, verticalScale, scale } from '../../styles/metrics.js';
 
 import { colors } from '../../styles/index.js';
 
-const { width, height } = Dimensions.get('window');
-const PHONE_MAX_WIDTH = 430;
-const BASE_WIDTH = 390;
-const BASE_HEIGHT = 844;
-const usableWidth = Math.min(width, PHONE_MAX_WIDTH);
-const widthRatio = usableWidth / BASE_WIDTH;
-const heightRatio = Math.min(height, BASE_HEIGHT) / BASE_HEIGHT;
-const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-const scale = (value, min = value * 0.86, max = value) =>
-  Math.round(clamp(value * widthRatio, min, max));
-const verticalScale = (value, min = value * 0.78, max = value) =>
-  Math.round(clamp(value * heightRatio, min, max));
-
-const HEADER_HEIGHT = verticalScale(150, 118, 150);
-const NAV_HEIGHT = verticalScale(64, 58, 66);
 
 export const styles = StyleSheet.create({
   flex: {
@@ -27,57 +15,66 @@ export const styles = StyleSheet.create({
 
   notificacaoContent: {
     flex: 1,
-    paddingTop: verticalScale(22, 14, 22),
-    paddingHorizontal: scale(16, 12, 16),
+    paddingTop: verticalScale(28, 20, 30),
+    paddingHorizontal: scale(18, 14, 20),
     paddingBottom: NAV_HEIGHT + 20,
     backgroundColor: colors.bg,
   },
 
   notificacaoIconLogo: {
-    width: 36,
-    height: 36,
+    width: 46,
+    height: 46,
     resizeMode: 'contain',
-    marginRight: 10,
+    marginRight: 12,
+    marginTop: 6,
   },
 
   notificacaoItem: {
-    minHeight: 68,
+    minHeight: 92,
     flexDirection: 'row',
     alignItems: 'flex-start',
     borderBottomWidth: 1,
     borderBottomColor: '#D9D9D9',
-    paddingBottom: 10,
-    marginBottom: 10,
+    paddingBottom: 14,
+    marginBottom: 14,
+    borderRadius: 8,
+    backgroundColor: colors.white,
+    padding: 12,
   },
 
   notificacaoPatient: {
-    fontSize: 11,
+    fontSize: 13,
     color: colors.text,
     textTransform: 'uppercase',
+    flex: 1,
   },
 
   notificacaoPatientRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 4,
+    gap: 6,
+    marginTop: 4,
   },
 
   notificacaoTextArea: {
     flex: 1,
+    marginTop: 3,
+    paddingRight: 8,
   },
 
   notificacaoTime: {
     position: 'absolute',
-    right: 0,
-    bottom: 8,
-    fontSize: 10,
+    right: 12,
+    bottom: 10,
+    fontSize: 11,
     color: '#8E8E8E',
   },
 
   notificacaoTitle: {
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: '800',
     color: colors.text,
-    marginBottom: 4,
+    marginBottom: 6,
+    lineHeight: 21,
   }
 });

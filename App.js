@@ -14,7 +14,7 @@ import Conversas from './src/telas/Conversas/index.js';
 import Notificacoes from './src/telas/Notificacoes/index.js';
 import MenuPaciente from './src/telas/MenuPaciente/index.js';
 import PreencherLaudos from './src/telas/PreencherLaudos/index.js';
-import Favoritos from './src/telas/Favoritos/index.js';
+// import Favoritos from './src/telas/Favoritos/index.js';
 
 import BuscarCid from './src/telas/BuscarCid/index.js';
 import BuscarProcedimentos from './src/telas/BuscarProcedimentos/index.js';
@@ -51,7 +51,7 @@ export default function App() {
       [routes.notificacoes]: Notificacoes,
       [routes.menuPaciente]: MenuPaciente,
       [routes.preencherLaudos]: PreencherLaudos,
-      [routes.favoritos]: Favoritos,
+      // [routes.favoritos]: Favoritos,
       [routes.buscarCid]: BuscarCid,
       [routes.buscarProcedimentos]: BuscarProcedimentos,
 

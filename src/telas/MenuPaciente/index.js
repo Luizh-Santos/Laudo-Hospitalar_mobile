@@ -22,26 +22,16 @@ export default function MenuPaciente({ nav }) {
 
           <View>
             <Text style={styles.patientTopName}>
-              JOAO MARCOS DE FRANCA SANTOS
+             João Marcos de França Santos
             </Text>
 
-            <View style={styles.patientTopInfoRow}>
-              <Text style={styles.patientTopInfo}>MASCULINO</Text>
-              <Text style={styles.patientTopInfo}>22 ANOS</Text>
-              <Text style={styles.patientTopInfo}>SUS UNIFICADO</Text>
-            </View>
           </View>
         </View>
 
         <View style={styles.patientDataCard}>
           <View style={styles.patientDataRow}>
-            <Text style={styles.patientDataLabel}>Numero do atendimento</Text>
-            <Text style={styles.patientDataValue}>25500000235689</Text>
-          </View>
-
-          <View style={styles.patientDataRow}>
-            <Text style={styles.patientDataLabel}>Tipo</Text>
-            <Text style={styles.patientDataValue}>Internação</Text>
+            <Text style={styles.patientDataLabel}>Paciente</Text>
+            <Text style={styles.patientDataValue}> João Marcos de França Santos</Text>
           </View>
 
           <View style={styles.patientDataRow}>
@@ -50,31 +40,15 @@ export default function MenuPaciente({ nav }) {
           </View>
 
           <View style={styles.patientDataRow}>
-            <Text style={styles.patientDataLabel}>Ala</Text>
-            <Text style={styles.patientDataValue}>Ala Sus Masculino</Text>
+            <Text style={styles.patientDataLabel}>Setor / Leito</Text>
+            <Text style={styles.patientDataValue}>UTI A: EO1</Text>
           </View>
 
           <View style={styles.patientDataRow}>
-            <Text style={styles.patientDataLabel}>Apartamento</Text>
-            <Text style={styles.patientDataValue}>Apart. 55</Text>
+            <Text style={styles.patientDataLabel}>Atendimento</Text>
+            <Text style={styles.patientDataValue}>50</Text>
           </View>
 
-          <View style={styles.patientDataRow}>
-            <Text style={styles.patientDataLabel}>Admissão</Text>
-            <Text style={styles.patientDataValue}>01/01/2025</Text>
-          </View>
-
-          <View style={styles.patientDataRow}>
-            <Text style={styles.patientDataLabel}>Alta</Text>
-            <Text style={styles.patientDataValue}>13/01/2025</Text>
-          </View>
-
-          <View style={[styles.patientDataRow, styles.patientDataRowLast]}>
-            <Text style={styles.patientDataLabel}>Médico Responsável</Text>
-            <Text style={styles.patientDataValue}>
-              Luis Alberto Andrade Bueno
-            </Text>
-          </View>
         </View>
 
         <TouchableOpacity

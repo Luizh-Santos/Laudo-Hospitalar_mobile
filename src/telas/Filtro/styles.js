@@ -1,15 +1,10 @@
-import { Dimensions, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
+
+
+import { scale } from '../../styles/metrics.js';
 
 import { colors } from '../../styles/index.js';
 
-const { width } = Dimensions.get('window');
-const PHONE_MAX_WIDTH = 430;
-const BASE_WIDTH = 390;
-const usableWidth = Math.min(width, PHONE_MAX_WIDTH);
-const widthRatio = usableWidth / BASE_WIDTH;
-const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-const scale = (value, min = value * 0.86, max = value) =>
-  Math.round(clamp(value * widthRatio, min, max));
 
 export const styles = StyleSheet.create({
   filterOverlay: {

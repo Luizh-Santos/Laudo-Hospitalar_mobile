@@ -1,22 +1,10 @@
-import { Dimensions, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
+
+
+import { HEADER_HEIGHT, NAV_HEIGHT, verticalScale, scale } from '../../styles/metrics.js';
 
 import { colors } from '../../styles/index.js';
 
-const { width, height } = Dimensions.get('window');
-const PHONE_MAX_WIDTH = 430;
-const BASE_WIDTH = 390;
-const BASE_HEIGHT = 844;
-const usableWidth = Math.min(width, PHONE_MAX_WIDTH);
-const widthRatio = usableWidth / BASE_WIDTH;
-const heightRatio = Math.min(height, BASE_HEIGHT) / BASE_HEIGHT;
-const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-const scale = (value, min = value * 0.86, max = value) =>
-  Math.round(clamp(value * widthRatio, min, max));
-const verticalScale = (value, min = value * 0.78, max = value) =>
-  Math.round(clamp(value * heightRatio, min, max));
-
-const HEADER_HEIGHT = verticalScale(150, 118, 150);
-const NAV_HEIGHT = verticalScale(64, 58, 66);
 
 export const styles = StyleSheet.create({
   aihBack: {
@@ -28,38 +16,39 @@ export const styles = StyleSheet.create({
   aihButtonRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: 23,
+    paddingHorizontal: 34,
   },
 
   aihCodeInput: {
-    width: 128,
-    height: 24,
+    width: 160,
+    height: 34,
     borderWidth: 1,
     borderColor: '#222',
     borderRadius: 6,
     backgroundColor: colors.white,
     marginRight: 8,
-    paddingHorizontal: 5,
+    paddingHorizontal: 8,
+    fontSize: 13,
   },
 
   aihCodeRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 17,
+    marginBottom: 22,
   },
 
   aihContent: {
     flex: 1,
-    paddingHorizontal: scale(8, 8, 12),
-    paddingTop: verticalScale(19, 12, 19),
+    paddingHorizontal: scale(16, 14, 20),
+    paddingTop: verticalScale(24, 18, 28),
     paddingBottom: NAV_HEIGHT + 20,
     backgroundColor: colors.bg,
   },
 
   aihFavoriteButton: {
-    height: 32,
-    width: 78,
-    borderRadius: 8,
+    height: 40,
+    width: 104,
+    borderRadius: 10,
     backgroundColor: '#EDEDED',
     alignItems: 'center',
     justifyContent: 'center',
@@ -67,14 +56,15 @@ export const styles = StyleSheet.create({
   },
 
   aihFavoriteButtonText: {
-    fontSize: 10,
+    fontSize: 12,
     color: '#6E767C',
+    fontWeight: '800',
   },
 
   aihFinishButton: {
-    height: 32,
-    width: 78,
-    borderRadius: 8,
+    height: 40,
+    width: 104,
+    borderRadius: 10,
     backgroundColor: colors.primary,
     alignItems: 'center',
     justifyContent: 'center',
@@ -82,18 +72,20 @@ export const styles = StyleSheet.create({
   },
 
   aihFinishButtonText: {
-    fontSize: 10,
+    fontSize: 12,
     color: colors.white,
+    fontWeight: '800',
   },
 
   aihFullInput: {
-    height: 24,
+    height: 34,
     borderWidth: 1,
     borderColor: '#222',
     borderRadius: 6,
     backgroundColor: colors.white,
-    paddingHorizontal: 5,
-    marginBottom: 45,
+    paddingHorizontal: 8,
+    marginBottom: 52,
+    fontSize: 13,
   },
 
   aihHeader: {
@@ -106,14 +98,16 @@ export const styles = StyleSheet.create({
   },
 
   aihLabel: {
-    fontSize: 11,
+    fontSize: 13,
     color: '#111',
-    marginBottom: 5,
+    marginBottom: 7,
+    fontWeight: '600',
+    
   },
 
   aihSelect: {
-    width: 190,
-    minHeight: 32,
+    width: 230,
+    minHeight: 40,
     borderWidth: 1,
     borderColor: '#222',
     borderRadius: 7,
@@ -121,14 +115,14 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingLeft: 8,
-    paddingRight: 4,
-    marginBottom: 10,
+    paddingLeft: 10,
+    paddingRight: 6,
+    marginBottom: 14,
   },
 
   aihSelectOption: {
-    minHeight: 34,
-    paddingHorizontal: 8,
+    minHeight: 40,
+    paddingHorizontal: 10,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -142,43 +136,45 @@ export const styles = StyleSheet.create({
 
   aihSelectOptionText: {
     flex: 1,
-    fontSize: 11,
+    fontSize: 13,
     color: colors.text,
   },
 
   aihSelectOptions: {
-    width: 190,
+    width: 230,
     borderWidth: 1,
     borderColor: '#D4D4D4',
     borderRadius: 8,
     backgroundColor: colors.white,
     marginTop: -4,
-    marginBottom: 16,
+    marginBottom: 20,
     overflow: 'hidden',
     elevation: 3,
   },
 
   aihSelectText: {
     flex: 1,
-    fontSize: 11,
+    fontSize: 13,
     color: '#8A8A8A',
+    fontWeight: '800',
   },
 
   aihSmallInput: {
-    width: 72,
-    height: 24,
+    width: 92,
+    height: 34,
     borderWidth: 1,
     borderColor: '#222',
     borderRadius: 6,
     backgroundColor: colors.white,
     marginRight: 9,
-    paddingHorizontal: 5,
+    paddingHorizontal: 8,
+    fontSize: 13,
   },
 
   aihSmallSearchRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 17,
+    marginBottom: 22,
   },
 
   aihStar: {
@@ -203,15 +199,15 @@ export const styles = StyleSheet.create({
   },
 
   aihTabText: {
-    fontSize: 11,
+    fontSize: 13,
     color: '#1A1A1A',
     fontWeight: '700',
   },
 
   aihTabs: {
-    height: 34,
-    marginHorizontal: 8,
-    marginTop: 10,
+    height: 42,
+    marginHorizontal: 14,
+    marginTop: 14,
     backgroundColor: '#DFDFDF',
     borderRadius: 5,
     flexDirection: 'row',
@@ -219,16 +215,16 @@ export const styles = StyleSheet.create({
   },
 
   aihTextarea: {
-    height: 68,
+    height: 82,
     backgroundColor: colors.white,
     borderWidth: 1,
     borderColor: '#222',
     borderRadius: 8,
-    marginBottom: 19,
-    paddingHorizontal: 8,
-    paddingTop: 6,
+    marginBottom: 22,
+    paddingHorizontal: 10,
+    paddingTop: 8,
     textAlignVertical: 'top',
-    fontSize: 12,
+    fontSize: 13,
     color: colors.text,
     elevation: 3,
   },
