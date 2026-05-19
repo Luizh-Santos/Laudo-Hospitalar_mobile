@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
@@ -7,8 +7,11 @@ import { routes } from '../../routes.js';
 import { MedLogo } from '../../components/index.js';
 
 export default function Esqueci({ nav, step = 1 }) {
+  const [selectedContact, setSelectedContact] = useState('');
+
   function nextStep() {
     if (step === 1) nav.go(routes.esqueci2);
+    if (step === 2 && !selectedContact) return;
     if (step === 2) nav.go(routes.esqueci3);
     if (step === 3) nav.go(routes.esqueci4);
     if (step === 4) nav.go(routes.esqueci5);
@@ -67,23 +70,56 @@ export default function Esqueci({ nav, step = 1 }) {
             Escolha um contato para{'\n'}confirmar sua conta
           </Text>
 
-          <TouchableOpacity style={styles.resetOption}>
-            <Feather name="target" size={13} color="#111" />
+          <TouchableOpacity
+            accessibilityRole="radio"
+            accessibilityState={{ selected: selectedContact === 'celular' }}
+            activeOpacity={0.8}
+            style={[
+              styles.resetOption,
+              selectedContact === 'celular' && styles.resetOptionSelected,
+            ]}
+            onPress={() => setSelectedContact('celular')}
+          >
+            <Feather
+              name={selectedContact === 'celular' ? 'check-circle' : 'circle'}
+              size={15}
+              color={selectedContact === 'celular' ? '#213D4C' : '#111'}
+            />
             <Text style={styles.resetOptionText}>
               Envie um código para o celular:{'\n'}
               149****4967
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.resetOption}>
-            <Feather name="target" size={13} color="#111" />
+          <TouchableOpacity
+            accessibilityRole="radio"
+            accessibilityState={{ selected: selectedContact === 'email' }}
+            activeOpacity={0.8}
+            style={[
+              styles.resetOption,
+              selectedContact === 'email' && styles.resetOptionSelected,
+            ]}
+            onPress={() => setSelectedContact('email')}
+          >
+            <Feather
+              name={selectedContact === 'email' ? 'check-circle' : 'circle'}
+              size={15}
+              color={selectedContact === 'email' ? '#213D4C' : '#111'}
+            />
             <Text style={styles.resetOptionText}>
               Envie um código para o e-mail:{'\n'}
               jo**********47@gmail.com
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.resetButton} onPress={nextStep}>
+          <TouchableOpacity
+            disabled={!selectedContact}
+            style={[
+              styles.resetButton,
+              !selectedContact && styles.resetButtonDisabled,
+            ]}
+            onPress={nextStep}
+          >
             <Text style={styles.resetButtonText}>CONTINUAR</Text>
           </TouchableOpacity>
         </>

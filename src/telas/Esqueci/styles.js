@@ -41,6 +41,10 @@ export const styles = StyleSheet.create({
   elevation: 5,
 },
 
+  resetButtonDisabled: {
+  opacity: 0.55,
+},
+
   resetButtonText: {
   color: colors.white,
   fontSize: 13,
@@ -82,7 +86,17 @@ export const styles = StyleSheet.create({
   width: 230,
   flexDirection: 'row',
   alignItems: 'center',
+  borderWidth: 1.5,
+  borderColor: 'transparent',
+  borderRadius: 7,
+  paddingHorizontal: 10,
+  paddingVertical: 8,
   marginBottom: 28,
+},
+
+  resetOptionSelected: {
+  borderColor: colors.primary,
+  backgroundColor: colors.white,
 },
 
   resetOptionText: {
