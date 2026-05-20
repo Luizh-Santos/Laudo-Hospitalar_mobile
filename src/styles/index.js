@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
 
-
 import { PHONE_MAX_WIDTH, HEADER_HEIGHT, NAV_HEIGHT, verticalScale, scale } from './metrics.js';
 
 export const colors = {
@@ -15,7 +14,6 @@ export const colors = {
   white: '#FFFFFF',
   teal: '#0AA4AA',
 };
-
 
 export const styles = StyleSheet.create({
   app: {
@@ -38,7 +36,6 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.bg,
   },
 
-  // LOGIN
   loginLogo: {
     width: scale(132, 104, 132),
     height: scale(132, 104, 132),
@@ -67,7 +64,6 @@ export const styles = StyleSheet.create({
     color: colors.text,
   },
 
-  // HEADER PADRÃO
   medicoHeader: {
     height: HEADER_HEIGHT,
     backgroundColor: colors.primary,
@@ -96,7 +92,6 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 8,
     marginTop: 5,
-   
   },
 
   searchBox: {
@@ -124,7 +119,6 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
-  // NOTIFICAÇÕES
   notificacaoHeader: {
     height: HEADER_HEIGHT,
     backgroundColor: colors.primary,
@@ -140,97 +134,6 @@ export const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
 
-  // CONFIG
-  safeHeader: {
-    backgroundColor: colors.white,
-  },
-
-  header: {
-    height: 56,
-    backgroundColor: colors.white,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: scale(12, 10, 14),
-    borderBottomWidth: 1,
-    borderBottomColor: '#EAEAEA',
-  },
-
-  headerIcon: {
-    width: 42,
-    height: 42,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  headerTitle: {
-    flex: 1,
-    textAlign: 'center',
-    color: colors.text,
-    fontSize: 16,
-    fontWeight: '800',
-  },
-
-  headerLogin: {
-    minWidth: 42,
-    height: 32,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  headerLoginText: {
-    color: colors.primary,
-    fontSize: 13,
-    fontWeight: '700',
-  },
-
-  configHeader: {
-    height: HEADER_HEIGHT,
-    backgroundColor: colors.primary,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderBottomRightRadius: 3,
-    borderBottomLeftRadius: 3,
-  },
-
-  configLogo: {
-    width: scale(58, 50, 58),
-    height: scale(58, 50, 58),
-    resizeMode: 'contain',
-  },
-
-  configTitle: {
-    color: colors.white,
-    fontSize: 20,
-    fontWeight: '800',
-    marginTop: 8,
-  },
-
-  // PERFIL
-  perfilHeader: {
-    height: HEADER_HEIGHT,
-    backgroundColor: colors.primary,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderBottomRightRadius: 3,
-    borderBottomLeftRadius: 3,
-  },
-
-  perfilLogo: {
-    width: scale(58, 50, 58),
-    height: scale(58, 50, 58),
-    resizeMode: 'contain',
-  },
-
-  perfilTitle: {
-    color: colors.white,
-    fontSize: 20,
-    fontWeight: '800',
-    marginTop: 8,
-  },
-
-  // LAUDOS
-// NAVBAR MAIOR
   bottomNav: {
     position: 'absolute',
     left: 0,
@@ -254,147 +157,5 @@ export const styles = StyleSheet.create({
     fontSize: scale(14, 11, 14),
     color: '#1D1D1D',
     fontWeight: '600',
-  },
-
-  // GERAIS
-  homeNav: {
-    height: 44,
-    backgroundColor: colors.white,
-    flexDirection: 'row',
-    borderBottomWidth: 1,
-    borderBottomColor: '#E6E6E6',
-  },
-
-  homeNavBtn: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderBottomWidth: 2,
-    borderBottomColor: 'transparent',
-  },
-
-  homeNavBtnActive: {
-    borderBottomColor: colors.primary,
-  },
-
-  homeNavText: {
-    color: colors.muted,
-    fontSize: 12,
-    fontWeight: '700',
-  },
-
-  homeNavTextActive: {
-    color: colors.primary,
-  },
-
-  page: {
-    flex: 1,
-    padding: scale(18, 14, 18),
-    paddingBottom: NAV_HEIGHT + 20,
-    gap: 14,
-    backgroundColor: colors.bg,
-  },
-
-  card: {
-    backgroundColor: colors.white,
-    borderRadius: 18,
-    padding: 18,
-  },
-
-  input: {
-    minHeight: 42,
-    borderWidth: 1,
-    borderColor: colors.line,
-    borderRadius: 8,
-    backgroundColor: colors.white,
-    paddingHorizontal: 12,
-    fontSize: 14,
-    color: colors.text,
-    marginTop: 12,
-  },
-
-  textarea: {
-    minHeight: 120,
-    paddingTop: 10,
-    textAlignVertical: 'top',
-  },
-
-  button: {
-    alignSelf: 'center',
-    minWidth: 110,
-    height: 38,
-    borderRadius: 10,
-    backgroundColor: colors.primary,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 18,
-    marginTop: 18,
-  },
-
-  buttonSecondary: {
-    backgroundColor: '#EDEDED',
-  },
-
-  buttonDanger: {
-    backgroundColor: colors.danger,
-  },
-
-  buttonText: {
-    color: colors.white,
-    fontSize: 13,
-    fontWeight: '800',
-  },
-
-  buttonSecondaryText: {
-    color: colors.primary,
-  },
-
-  title: {
-    fontSize: 22,
-    fontWeight: '800',
-    color: colors.text,
-    marginBottom: 4,
-  },
-
-  subtitle: {
-    fontSize: 14,
-    lineHeight: 20,
-    color: colors.muted,
-    marginBottom: 12,
-  },
-
-  configItem: {
-    backgroundColor: colors.white,
-    borderRadius: 18,
-    padding: 16,
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 14,
-  },
-
-  configText: {
-    flex: 1,
-    fontSize: 15,
-    fontWeight: '800',
-    color: colors.text,
-  },
-
-  // TELAS INTERNAS
-  // FAVORITOS
-  // PACIENTE
-  // AIH
-  // ESQUECI SENHA
-  // ESQUECI SENHA
-cardText: {
-    fontSize: 14,
-    lineHeight: 20,
-    color: colors.text,
-    textAlign: 'center',
-  },
-
-  rowCenter: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 10,
   },
 });

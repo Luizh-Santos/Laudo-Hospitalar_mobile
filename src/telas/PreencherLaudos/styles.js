@@ -28,7 +28,9 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
     marginRight: 8,
     paddingHorizontal: 8,
+    paddingVertical: 0,
     fontSize: 13,
+    textAlignVertical: 'center',
   },
 
   aihCodeRow: {
@@ -61,6 +63,14 @@ export const styles = StyleSheet.create({
     fontWeight: '800',
   },
 
+  aihError: {
+    color: colors.danger,
+    fontSize: 12,
+    fontWeight: '700',
+    marginBottom: 12,
+    textAlign: 'center',
+  },
+
   aihFinishButton: {
     height: 40,
     width: 104,
@@ -78,14 +88,16 @@ export const styles = StyleSheet.create({
   },
 
   aihFullInput: {
-    height: 34,
+    height: 35,
     borderWidth: 1,
     borderColor: '#222',
     borderRadius: 6,
     backgroundColor: colors.white,
     paddingHorizontal: 8,
+    paddingVertical: 0,
     marginBottom: 52,
     fontSize: 13,
+    textAlignVertical: 'center',
   },
 
   aihHeader: {
@@ -95,6 +107,11 @@ export const styles = StyleSheet.create({
     borderBottomRightRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+
+  aihInputError: {
+    borderColor: colors.danger,
+    borderWidth: 2,
   },
 
   aihLabel: {
@@ -168,7 +185,9 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
     marginRight: 9,
     paddingHorizontal: 8,
+    paddingVertical: 0,
     fontSize: 13,
+    textAlignVertical: 'center',
   },
 
   aihSmallSearchRow: {

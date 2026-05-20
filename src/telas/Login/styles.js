@@ -36,6 +36,14 @@ export const styles = StyleSheet.create({
     gap: 24,
   },
 
+  loginError: {
+    color: colors.danger,
+    fontSize: 12,
+    fontWeight: '600',
+    marginTop: -14,
+    textAlign: 'center',
+  },
+
   loginPage: {
     flex: 1,
     width: '100%',

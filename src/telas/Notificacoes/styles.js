@@ -52,7 +52,6 @@ export const styles = StyleSheet.create({
   notificacaoPatientRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 6,
     marginTop: 4,
   },
 

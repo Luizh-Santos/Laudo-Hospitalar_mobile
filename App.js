@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { SafeAreaView, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
@@ -14,17 +14,12 @@ import Conversas from './src/telas/Conversas/index.js';
 import Notificacoes from './src/telas/Notificacoes/index.js';
 import MenuPaciente from './src/telas/MenuPaciente/index.js';
 import PreencherLaudos from './src/telas/PreencherLaudos/index.js';
-// import Favoritos from './src/telas/Favoritos/index.js';
-
-import BuscarCid from './src/telas/BuscarCid/index.js';
-import BuscarProcedimentos from './src/telas/BuscarProcedimentos/index.js';
 
 import Configuracoes from './src/telas/Configuracoes/index.js';
 import Perfil from './src/telas/Perfil/index.js';
 import Seguranca from './src/telas/Seguranca/index.js';
 import Suporte from './src/telas/Suporte/index.js';
 import Termos from './src/telas/Termos/index.js';
-import FavoritosConfig from './src/telas/AdicionarFavoritos/index.js';
 
 import AlterarEmail from './src/telas/AlterarEmail/index.js';
 import AlterarSenha from './src/telas/AlterarSenha/index.js';
@@ -32,9 +27,65 @@ import FaleConosco from './src/telas/FaleConosco/index.js';
 import Horarios from './src/telas/Horarios/index.js';
 import AdicionarFavoritos from './src/telas/AdicionarFavoritos/index.js';
 
+const laudosFavoritosIniciais = [
+  { id: 1, nome: 'PNEUMONIA' },
+  { id: 2, nome: 'PNEUMONIA' },
+  { id: 3, nome: 'PNEUMONIA' },
+  { id: 4, nome: 'PNEUMONIA' },
+];
+
 export default function App() {
   const nav = useSimpleNavigation();
   const screen = nav.current;
+  const [laudosFavoritos, setLaudosFavoritos] = useState(laudosFavoritosIniciais);
+  const [laudoFavoritoEmPreenchimento, setLaudoFavoritoEmPreenchimento] = useState(null);
+
+  function iniciarCadastroFavorito(nome) {
+    setLaudoFavoritoEmPreenchimento({ id: Date.now(), nome, modo: 'criar' });
+  }
+
+  function salvarLaudoFavorito(dadosLaudo) {
+    if (!laudoFavoritoEmPreenchimento) return;
+
+    if (laudoFavoritoEmPreenchimento.modo === 'editar') {
+      setLaudosFavoritos((laudosAtuais) =>
+        laudosAtuais.map((laudo) =>
+          laudo.id === laudoFavoritoEmPreenchimento.id
+            ? {
+                ...laudo,
+                nome: laudoFavoritoEmPreenchimento.nome,
+                dados: dadosLaudo,
+              }
+            : laudo
+        )
+      );
+    } else {
+      setLaudosFavoritos((laudosAtuais) => [
+        ...laudosAtuais,
+        {
+          ...laudoFavoritoEmPreenchimento,
+          dados: dadosLaudo,
+        },
+      ]);
+    }
+
+    setLaudoFavoritoEmPreenchimento(null);
+  }
+
+  function abrirEdicaoLaudoFavorito(laudo) {
+    setLaudoFavoritoEmPreenchimento({ ...laudo, modo: 'editar' });
+  }
+
+  function excluirLaudoFavorito(id) {
+    setLaudosFavoritos((laudosAtuais) =>
+      laudosAtuais.filter((laudo) => laudo.id !== id)
+    );
+  }
+
+  function resetarDemoFavoritos() {
+    setLaudosFavoritos(laudosFavoritosIniciais);
+    setLaudoFavoritoEmPreenchimento(null);
+  }
 
   const screens = useMemo(
     () => ({
@@ -50,18 +101,39 @@ export default function App() {
       [routes.conversas]: Conversas,
       [routes.notificacoes]: Notificacoes,
       [routes.menuPaciente]: MenuPaciente,
-      [routes.preencherLaudos]: PreencherLaudos,
-      // [routes.favoritos]: Favoritos,
-      [routes.buscarCid]: BuscarCid,
-      [routes.buscarProcedimentos]: BuscarProcedimentos,
+      [routes.preencherLaudos]: (props) => (
+        <PreencherLaudos
+          {...props}
+          laudoFavoritoEmPreenchimento={laudoFavoritoEmPreenchimento}
+          onSalvarLaudoFavorito={salvarLaudoFavorito}
+        />
+      ),
 
       [routes.configuracoes]: Configuracoes,
       [routes.perfil]: Perfil,
       [routes.seguranca]: Seguranca,
       [routes.suporte]: Suporte,
       [routes.termos]: Termos,
-      [routes.adicionarFavoritos]: AdicionarFavoritos,
-      [routes.favoritosConfig]: FavoritosConfig,
+      [routes.adicionarFavoritos]: (props) => (
+        <AdicionarFavoritos
+          {...props}
+          laudos={laudosFavoritos}
+          onIniciarCadastroFavorito={iniciarCadastroFavorito}
+          onEditarLaudoFavorito={abrirEdicaoLaudoFavorito}
+          onExcluirLaudoFavorito={excluirLaudoFavorito}
+          onSairFavoritos={resetarDemoFavoritos}
+        />
+      ),
+      [routes.favoritosConfig]: (props) => (
+        <AdicionarFavoritos
+          {...props}
+          laudos={laudosFavoritos}
+          onIniciarCadastroFavorito={iniciarCadastroFavorito}
+          onEditarLaudoFavorito={abrirEdicaoLaudoFavorito}
+          onExcluirLaudoFavorito={excluirLaudoFavorito}
+          onSairFavoritos={resetarDemoFavoritos}
+        />
+      ),
       
 
       [routes.alterarEmail]: AlterarEmail,
@@ -70,7 +142,7 @@ export default function App() {
       [routes.horarios]: Horarios,
       
     }),
-    []
+    [laudoFavoritoEmPreenchimento, laudosFavoritos]
   );
 
   const Screen = screens[screen] || Login;

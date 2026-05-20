@@ -92,6 +92,76 @@ export const styles = StyleSheet.create({
     gap: 8,
   },
 
+  favoriteModal: {
+    width: '86%',
+    backgroundColor: colors.white,
+    borderRadius: 10,
+    padding: 16,
+    elevation: 8,
+  },
+
+  favoriteModalActions: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    gap: 10,
+  },
+
+  favoriteModalCancelButton: {
+    height: 36,
+    paddingHorizontal: 12,
+    borderRadius: 8,
+    backgroundColor: '#EDEDED',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  favoriteModalCancelText: {
+    color: colors.muted,
+    fontSize: 12,
+    fontWeight: '800',
+  },
+
+  favoriteModalConfirmButton: {
+    height: 36,
+    paddingHorizontal: 12,
+    borderRadius: 8,
+    backgroundColor: colors.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  favoriteModalConfirmText: {
+    color: colors.white,
+    fontSize: 12,
+    fontWeight: '800',
+  },
+
+  favoriteModalInput: {
+    height: 38,
+    borderWidth: 1,
+    borderColor: colors.primary,
+    borderRadius: 6,
+    paddingHorizontal: 10,
+    paddingVertical: 0,
+    marginBottom: 14,
+    fontSize: 14,
+    color: colors.text,
+  },
+
+  favoriteModalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.35)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  favoriteModalTitle: {
+    color: colors.text,
+    fontSize: 16,
+    fontWeight: '800',
+    marginBottom: 12,
+  },
+
   favoriteSearchBox: {
     height: 38,
     borderWidth: 1.4,
